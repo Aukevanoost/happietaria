@@ -1,0 +1,13 @@
+ RewriteEngine On
+
+RewriteBase /happietaria/
+
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]*)/([^/]*)/?([^/]*)$ index.php?controller=$1&method=$2&id=$3 [L]
+
+# errordocuments
+# ErrorDocument 404 /pages/notfound

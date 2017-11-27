@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <!-- BASE -->
+        <base href="/happietaria/">
+        <title><?= $_GET['page_title'] ?> | SiloProbe</title>
+
+
+        <!-- meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="">
+
+
+        <!-- favicon
+            <link rel="shortcut icon" type="image/png" href="/template/images/favicon.png"/>
+            <link rel="icon" type="image/ico" href="template/_img/logo_small.ico"/>
+        -->
+
+
+        <!-- jQuery -->
+        <script src="_js/jquery-3.2.1.min.js"></script>
+
+
+        <!-- Materialize -->
+        <link href="_css/materialize.min.css" rel="stylesheet" />
+        <script src="_js/materialize.min.js"></script>
+
+
+        <!-- eigen stylesheets -->
+        <?php echo ($_GET["template"] == "private") ? '<link href="/template/_css/private.css" rel="stylesheet" />'  : '<link href="template/_css/public.css" rel="stylesheet" />'; ?>
+    </head>
+    <body style="background: #eee">
+            <?php
+                // Head
+                if($_GET["header"]) {
+                    include('template/headers/'.$_GET["template"].'.phtml');
+                }
+
+                // body
+                echo $content;
+            ?>
+    </body>
+
+
+    <!-- Eigen JS -->
+    <script src="template/_js/base.js"></script>
+</html>
