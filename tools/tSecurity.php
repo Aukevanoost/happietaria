@@ -6,9 +6,7 @@ use PDO;
 
 class tSecurity
 {
-    private static $salt = "P@sSw0rD123321!@#";
-
-
+    const salt = "P@sSw0rD123321!@#";
 
     public static function randomString($length = 10) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

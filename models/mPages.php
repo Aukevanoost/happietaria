@@ -10,6 +10,7 @@ namespace Models;
 
 use core\Database;
 use PDO;
+use tools\tSecurity;
 
 class mPages
 {
@@ -28,28 +29,23 @@ class mPages
 
 
         $user = filter_var ( $_POST['username'], FILTER_SANITIZE_STRING);
-		$stmt = $this->connection->prepare("SELECT *, u.active FROM members u JOIN company c ON c.company_id = u.company_id WHERE username = '".$user."'");
+		$stmt = $this->connection->prepare("SELECT * FROM gebruiker WHERE email = '".$user."'");
 
 
         if ($stmt->execute()) {
             $count = $stmt->rowCount();
             if($count >= 1){
                 $user = $stmt->fetchAll();
+                //var_dump($user);
                 $user = $user[0];
 				
-				$pass = $this->hashPassword($_POST['password'], $user["salt"]);
+				$pass = tSecurity::hashPassword($_POST['password'], $user["salt"]);
 
-				if($pass == $user["password"]){
-					if($user["active"] == 1){
-						if($user["blocked"] == 0){
-							$_SESSION["ingelogd"] = true;
-							$_SESSION["user"] = $user;
-						}else{
-							$data["message"] = '<div class="msg_error">You have been blocked from the server</div>';
-						}
-					}else{
-						$data["message"] = '<div class="msg_error">Username and/or password incorrect</div>';
-					}
+				if($pass == $user["wachtwoord"]){
+                    $_SESSION["ingelogd"] = true;
+                    $_SESSION["gebruiker"] = $user;
+
+
 				}else{
 					$data["message"] = '<div class="msg_error">Username and/or password incorrect</div>';
 				}
@@ -66,7 +62,7 @@ class mPages
 
     public function signOut(){
         session_destroy();
-        header("location: /pages/signin");
+        header("location: /pages/inloggen");
 
     }
 

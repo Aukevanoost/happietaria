@@ -24,7 +24,6 @@ class cPages
     public function onsdoel(){
         $_GET["page_title"] = "Ons doel";
         $_GET["template"] = "public";
-
         $this->data = array();
     }
 
@@ -37,15 +36,26 @@ class cPages
 
         if(!empty($_POST)){
             $this->data = $this->model->signIn();
+        }else{
+            $this->data["message"] = "no post";
         }
 
         if(isset($_SESSION['ingelogd']) && !empty($_SESSION['ingelogd'])) {
-            //header("location: /dashboard/employee");
+            header("location: /pages/dashboard");
         }
     }
 
+    public function dashboard(){
+        if(!isset($_SESSION['ingelogd']) || empty($_SESSION['ingelogd'])) {
+            header("location: /pages/inloggen");
+        }
 
-    public function signout(){
+        $_GET["template"] = "private";
+        $_GET["page_title"] = "Dashboard";
+        $_GET["header"] = false;
+    }
+
+    public function uitloggen(){
         $_GET["page_title"] = "Sign out";
         $this->data = $this->model->signOut();
     }

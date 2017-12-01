@@ -2,28 +2,30 @@
     <div class="mask">
 
                 <div class="card" id="loginDiv">
-                    <h4 style="text-align: center; padding-top: 15px;">Inloggen</h4>
+                    <form method="post" action="">
 
-                    <div class="card-content">
-                        <form method="post" action="">
+                        <h4 style="text-align: center; padding-top: 15px;">Inloggen</h4>
+                        <div class="card-content">
+                            <p><?= $this->obj->data["message"] ?></p>
+
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input id="icon_prefix" type="text" class="validate">
+                                    <input id="icon_prefix" name="username" type="text" class="validate">
                                     <label for="icon_prefix">Email</label>
                                 </div>
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">security</i>
-                                    <input id="password" type="password" class="validate">
+                                    <input id="password" type="password" name="password" class="validate">
                                     <label for="icon_telephone">Password</label>
                                 </div>
                             </div>
-                        </form>
-                    </div>
-                    <div class="card-action">
-                        <button type="submit" class="waves-effect waves-light btn right green darken-1">Inloggen</button>
-                        <a href="/pages/home" class="waves-effect waves-teal btn grey lighten-1">Terug</a>
-                    </div>
+                        </div>
+                        <div class="card-action">
+                            <button type="submit" class="waves-effect waves-light btn right green darken-1" >inloggen</button>
+                            <a href="/pages/home" class="waves-effect waves-teal btn grey lighten-1">Terug</a>
+                        </div>
+                    </form>
                 </div>
 
     </div>
