@@ -37,7 +37,7 @@ class cPages
         if(!empty($_POST)){
             $this->data = $this->model->signIn();
         }else{
-            $this->data["message"] = "no post";
+            $this->data["message"] = "";
         }
 
         if(isset($_SESSION['ingelogd']) && !empty($_SESSION['ingelogd'])) {
@@ -52,7 +52,6 @@ class cPages
 
         $_GET["template"] = "private";
         $_GET["page_title"] = "Dashboard";
-        $_GET["header"] = false;
     }
 
     public function uitloggen(){
