@@ -21,6 +21,13 @@ class cPages
         $this->data = array();
     }
 
+    public function onsdoel(){
+        $_GET["page_title"] = "Ons doel";
+        $_GET["template"] = "public";
+
+        $this->data = array();
+    }
+
 
 
     public function inloggen(){
