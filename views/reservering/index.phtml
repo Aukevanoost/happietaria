@@ -2,7 +2,61 @@
 <div class="container">
     <div class="card">
         <div class="card-content">
+            <?php
+            foreach($this->obj->data["states"] as $s){
+                //if($s["status_id"] == $_GET["id"]){  $curState = $s["naam"]; } else { $class = "waves-effect waves-teal btn-flat"; }
+                $class = ($s["status_id"] == $_GET["id"]) ? "waves-effect light-blue darken-3 waves-light btn" :"waves-effect waves-teal btn-flat"  ;
+                echo '<a href="/reservering/index/'.$s["status_id"].'" class="'.$class.'">'.$s["naam"].'</a>';
 
+            }
+
+
+            ?>
+            <a href="/reservering/statussen" class="btn-floating right  red darken-3"><i class="material-icons">build</i></a>
+            <br />
+            <br />
+            <hr />
+            <br />
+            <br />
+            <h4>Reserveringen</h4>
+
+            <table  class="table">
+                <thead>
+                    <th>#</th>
+                    <th>Naam</th>
+                    <th>Reservering</th>
+                    <th>Geaccepteerd</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                <?php
+                foreach($this->obj->data["reservations"] as $r){
+                    switch($r["geaccepteerd"]){
+                        case 0: $r["geaccepteerd"] = "Nog niet behandeld";break;
+                        case 1: $r["geaccepteerd"] = "<b style='color: #0c0'>Ja</b>";break;
+                        case 2: $r["geaccepteerd"] = "<b style='color: #c00'>Nee</b>";break;
+                    }
+                    $r["reservering"] = new DateTime($r["reservering"]);
+                    echo '<tr>';
+                        echo '<td></td>';
+                        echo '<td>'.$r["voornaam"].' '.$r["achternaam"].'</a></td>';
+                        echo '<td>'.$r["reservering"]->format('\<\b\>d M\<\/\b\> Y \o\m H:i').'</td>';
+                        echo '<td>'.$r["geaccepteerd"].'</td>';
+
+                        echo '<td style="text-align: right; min-width: 80px !Important">';
+                            echo '<a href="reservering/view/'.$r["reservering_id"].'">Bekijken</a> | <a href="#wijzigen">Beantwoorden</a> | <a href="#test">Wijzigen</a> | <a href="Archiveren">archiveren</a>';
+                            //echo '<a href="probes/index/'.$company["company_id"].'"><i class="fa fa-link fa-lg" title="Manage connected LoRa devices" aria-hidden="true"></i></a> | ';
+                            //echo '<a href="companies/edit/'.$company["company_id"].'"><i class="fa fa-pencil-square-o fa-lg" title="Edit this company" aria-hidden="true"></i></a> | ';
+                            //echo '<a href="companies/delete/'.$company["company_id"].'"><i class="fa fa-trash fa-lg" title="Delete this company" aria-hidden="true"></i></a> ';
+                        echo '</td>';
+                    echo '<tr>';
+                }
+
+                ?>
+                </tbody>
+            </table>
+            <br /><br />
+            <br /><br />
         </div>
     </div>
 </div>

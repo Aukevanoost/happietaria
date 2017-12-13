@@ -3,10 +3,9 @@
     <nav class=" light-blue darken-3">
         <div class="nav-wrapper ">
             <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a href="/pages/dashboard"><i class="material-icons">&nbsp; restaurant&nbsp;</i></a></li>
-
+                <li <?php if($_GET["controller"] == "pages"){echo 'class="active"';} ?>><a href="/pages/dashboard"><i class="material-icons">&nbsp; restaurant&nbsp;</i></a></li>
+                <li <?php if($_GET["controller"] == "reservering"){echo 'class="active"';} ?>><a href="/reservering/index">Reserveringen</a></li>
                 <li><a href="">Inschrijvingen</a></li>
-                <li ><a href="/reservering/index">Reserveringen</a></li>
                 <li><a href="">Nieuws</a></li>
                 <li><a href="">Contact</a></li>
             </ul>

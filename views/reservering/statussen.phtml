@@ -1,0 +1,48 @@
+<br />
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+
+            <?= $this->obj->data["message"]; ?>
+            <h4>Statusbeheer</h4>
+            <br />
+
+            <table  class="table bordered">
+                <thead>
+                <th>#</th>
+                <th>Title</th>
+                <th style="text-align: right;" ></th>
+                </thead>
+                <tbody>
+                    <tr style="background: #eee">
+                        <form action="" method="post">
+                            <td><i class="material-icons">add</i></td>
+                            <td>
+                                <input type="text" class="validate" required style="margin: 0px; padding: 0px; line-height: 20px; margin-top: -12;" name="status">
+                            </td>
+                            <td  style="text-align: right;"><button type="submit" name="addStatus" class="waves-effect waves-light btn green darken-1" style="margin-top: 0px;">New status</button></td>
+                        </form>
+                    </tr>
+                    <?php
+                        foreach($this->obj->data["list"] as $status){
+                            if($status["items"] >= 1){
+                                $state = '<i class="material-icons" aria-hidden="true" title="Deze status bevat '.$status["items"].' reservering(en), Je kunt alleen lege statussen verwijderen">lock</i>';
+                            }else{
+                                $state = '<a href="/reservering/delstatus/'.$status["status_id"].'" ><i class="material-icons">delete</i></a>';
+                            }
+
+                            echo '<tr>';
+                            echo '<td class="hideOnMob">'.$status["status_id"].'</td>';
+                            echo '<td>'.$status["naam"].'</td>';
+                            echo '<td style="text-align: right;">'.$state.'</td>';
+                            echo '<tr>';
+                        }
+
+                    ?>
+                </tbody>
+            </table>
+            <br /><Br /><br />
+
+        </div>
+    </div>
+</div>
