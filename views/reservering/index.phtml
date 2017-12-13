@@ -44,10 +44,10 @@
                                 echo '<td>'.$r["geaccepteerd"].'</td>';
 
                                 echo '<td style="text-align: right; min-width: 80px !Important">';
-                                    echo '<a href="reservering/view/'.$r["reservering_id"].'">Bekijken</a> | <a href="#wijzigen">Beantwoorden</a> | <a href="#test">Wijzigen</a> | <a href="Archiveren">archiveren</a>';
-                                    //echo '<a href="probes/index/'.$company["company_id"].'"><i class="fa fa-link fa-lg" title="Manage connected LoRa devices" aria-hidden="true"></i></a> | ';
-                                    //echo '<a href="companies/edit/'.$company["company_id"].'"><i class="fa fa-pencil-square-o fa-lg" title="Edit this company" aria-hidden="true"></i></a> | ';
-                                    //echo '<a href="companies/delete/'.$company["company_id"].'"><i class="fa fa-trash fa-lg" title="Delete this company" aria-hidden="true"></i></a> ';
+                                    echo '<a href="reservering/bekijken/'.$r["reservering_id"].'">Bekijken</a> | ';
+                                    echo '<a href="/reservering/index">Beantwoorden</a> |';
+                                    echo '<a href="/reservering/index">Wijzigen</a> | ';
+                                    echo '<a href="/reservering/index">archiveren</a>';
                                 echo '</td>';
                             echo '<tr>';
                         }

@@ -1,0 +1,67 @@
+<?php
+    $r =  $this->obj->data["reservation"];
+    $r["reservering"] = new DateTime($r["reservering"]);
+
+?>
+<br />
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+            <a href="/reservering/index" class="btn red darken-3">TERUG</a>
+            <a href="/reservering/index" class="btn green darken-1">BEHANDELEN</a>
+            <a href="/reservering/index" class="btn blue lighten-1">ARCHIVEREN</a>
+            <br />
+            <br />
+            <h4>Algemene details:</h4>
+            <table class="table bordered">
+                <tr>
+                    <th>Status:</th>
+                    <td><b><?= $r["naam"] ?></b></td>
+                </tr>
+                <tr>
+                    <th>Geaccepteerd:</th>
+                    <td><b><?php
+                        switch($r["geaccepteerd"]){
+                            case 0: echo "Nog niet behandeld";break;
+                            case 1: echo "<b style='color: #0c0'>Ja</b>";break;
+                            case 2: echo "<b style='color: #c00'>Nee</b>";break;
+                        }
+                    ?></b></td>
+                </tr>
+                <tr>
+                    <th>Aantal personen:</th>
+                    <td><b><?= $r["personen"] ?></b> personen</td>
+                </tr>
+                <tr>
+                    <th>Datum:</th>
+                    <td><?= $r["reservering"]->format('d F Y') ?></td>
+                </tr>
+                <tr>
+                    <th>Tijd:</th>
+                    <td><?= $r["reservering"]->format('H:i') ?></td>
+                </tr>
+            </table>
+            <br /><br />
+            <h4>Aangemaakt door:</h4>
+
+            <table class="table bordered">
+                <tr>
+                    <th>Naam:</th>
+                    <td><?= $r["voornaam"] . ' ' . $r["achternaam"] ?></td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td><a href="mailto:<?= $r["email"] ?>"><?= $r["email"] ?></a></td>
+                </tr>
+                <tr>
+                    <th>Telefoon:</th>
+                    <td><?= $r["telefoon"] ?></td>
+                </tr>
+            </table>
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
+    </div>
+</div>

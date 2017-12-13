@@ -20,6 +20,29 @@ class mReservering{
     }
 
 
+    /*
+    *  ======| GET FROM ID |==================================
+    *  Get full ticket information based on a ticket id
+    */
+    public function getFromId($reservering){
+        $data = array();
+        $qry = "
+			SELECT r.*, s.*, g.*               
+			FROM reservering r                
+			LEFT JOIN gebruiker g ON g.gebruiker_id = r.gebruiker_id                
+			LEFT JOIN status s ON s.status_id = r.status_id                 
+			WHERE reservering_id = ".$reservering;
+
+        $stmt = $this->Conn->prepare($qry);
+
+        if($stmt->execute()){
+            $data = $stmt->fetchAll();
+        }
+        return $data[0];
+    }
+
+
+
 
     /*
      * Haalt alle statussen op
