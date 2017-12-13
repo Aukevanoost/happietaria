@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40d6d105-c3af-40ba-aff4-853fc4c7f18f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/mReservering.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/reservering/statussen.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/cReservering.php" afterPath="$PROJECT_DIR$/controllers/cReservering.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/headers/private.phtml" afterPath="$PROJECT_DIR$/template/headers/private.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/reservering/index.phtml" afterPath="$PROJECT_DIR$/views/reservering/index.phtml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,12 +31,14 @@
       <file leaf-file-name="index.phtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/reservering/index.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="637">
-              <caret line="46" column="206" lean-forward="false" selection-start-line="46" selection-start-column="206" selection-end-line="46" selection-end-column="206" />
+            <state relative-caret-position="198">
+              <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
               <folding>
-                <marker date="1513179137386" expanded="true" signature="1413:1424" ph="..." />
-                <marker date="1513179137386" expanded="true" signature="1505:1516" ph="..." />
-                <marker date="1513179137386" expanded="true" signature="1998:2043" ph="..." />
+                <marker date="1513179568285" expanded="true" signature="1449:1460" ph="..." />
+                <marker date="1513179568285" expanded="true" signature="1549:1560" ph="..." />
+                <marker date="1513179568285" expanded="true" signature="2106:2151" ph="..." />
+                <marker date="1513179568285" expanded="true" signature="3181:3192" ph="..." />
+                <marker date="1513179568285" expanded="true" signature="3231:3262" ph="..." />
               </folding>
             </state>
           </provider>
@@ -396,12 +393,12 @@
       <workItem from="1512120628852" duration="3506000" />
       <workItem from="1512134514018" duration="6008000" />
       <workItem from="1512316350700" duration="1525000" />
-      <workItem from="1513172926530" duration="6206000" />
+      <workItem from="1513172926530" duration="6655000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24247000" />
+    <option name="totallyTimeSpent" value="24696000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -452,9 +449,11 @@
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <marker date="1513179137386" expanded="true" signature="1413:1424" ph="..." />
-            <marker date="1513179137386" expanded="true" signature="1505:1516" ph="..." />
-            <marker date="1513179137386" expanded="true" signature="1998:2043" ph="..." />
+            <marker date="1513179568285" expanded="true" signature="1449:1460" ph="..." />
+            <marker date="1513179568285" expanded="true" signature="1549:1560" ph="..." />
+            <marker date="1513179568285" expanded="true" signature="2106:2151" ph="..." />
+            <marker date="1513179568285" expanded="true" signature="3181:3192" ph="..." />
+            <marker date="1513179568285" expanded="true" signature="3231:3262" ph="..." />
           </folding>
         </state>
       </provider>
@@ -843,12 +842,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/reservering/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="46" column="206" lean-forward="false" selection-start-line="46" selection-start-column="206" selection-end-line="46" selection-end-column="206" />
+        <state relative-caret-position="198">
+          <caret line="31" column="25" lean-forward="true" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
           <folding>
-            <marker date="1513179137386" expanded="true" signature="1413:1424" ph="..." />
-            <marker date="1513179137386" expanded="true" signature="1505:1516" ph="..." />
-            <marker date="1513179137386" expanded="true" signature="1998:2043" ph="..." />
+            <marker date="1513179568285" expanded="true" signature="1449:1460" ph="..." />
+            <marker date="1513179568285" expanded="true" signature="1549:1560" ph="..." />
+            <marker date="1513179568285" expanded="true" signature="2106:2151" ph="..." />
+            <marker date="1513179568285" expanded="true" signature="3181:3192" ph="..." />
+            <marker date="1513179568285" expanded="true" signature="3231:3262" ph="..." />
           </folding>
         </state>
       </provider>

@@ -29,30 +29,34 @@
                     <th></th>
                 </thead>
                 <tbody>
-                <?php
-                foreach($this->obj->data["reservations"] as $r){
-                    switch($r["geaccepteerd"]){
-                        case 0: $r["geaccepteerd"] = "Nog niet behandeld";break;
-                        case 1: $r["geaccepteerd"] = "<b style='color: #0c0'>Ja</b>";break;
-                        case 2: $r["geaccepteerd"] = "<b style='color: #c00'>Nee</b>";break;
-                    }
-                    $r["reservering"] = new DateTime($r["reservering"]);
-                    echo '<tr>';
-                        echo '<td></td>';
-                        echo '<td>'.$r["voornaam"].' '.$r["achternaam"].'</a></td>';
-                        echo '<td>'.$r["reservering"]->format('\<\b\>d M\<\/\b\> Y \o\m H:i').'</td>';
-                        echo '<td>'.$r["geaccepteerd"].'</td>';
+                    <?php
+                        foreach($this->obj->data["reservations"] as $r){
+                            switch($r["geaccepteerd"]){
+                                case 0: $r["geaccepteerd"] = "Nog niet behandeld";break;
+                                case 1: $r["geaccepteerd"] = "<b style='color: #0c0'>Ja</b>";break;
+                                case 2: $r["geaccepteerd"] = "<b style='color: #c00'>Nee</b>";break;
+                            }
+                            $r["reservering"] = new DateTime($r["reservering"]);
+                            echo '<tr>';
+                                echo '<td></td>';
+                                echo '<td>'.$r["voornaam"].' '.$r["achternaam"].'</a></td>';
+                                echo '<td>'.$r["reservering"]->format('\<\b\>d M\<\/\b\> Y \o\m H:i').'</td>';
+                                echo '<td>'.$r["geaccepteerd"].'</td>';
 
-                        echo '<td style="text-align: right; min-width: 80px !Important">';
-                            echo '<a href="reservering/view/'.$r["reservering_id"].'">Bekijken</a> | <a href="#wijzigen">Beantwoorden</a> | <a href="#test">Wijzigen</a> | <a href="Archiveren">archiveren</a>';
-                            //echo '<a href="probes/index/'.$company["company_id"].'"><i class="fa fa-link fa-lg" title="Manage connected LoRa devices" aria-hidden="true"></i></a> | ';
-                            //echo '<a href="companies/edit/'.$company["company_id"].'"><i class="fa fa-pencil-square-o fa-lg" title="Edit this company" aria-hidden="true"></i></a> | ';
-                            //echo '<a href="companies/delete/'.$company["company_id"].'"><i class="fa fa-trash fa-lg" title="Delete this company" aria-hidden="true"></i></a> ';
-                        echo '</td>';
-                    echo '<tr>';
-                }
+                                echo '<td style="text-align: right; min-width: 80px !Important">';
+                                    echo '<a href="reservering/view/'.$r["reservering_id"].'">Bekijken</a> | <a href="#wijzigen">Beantwoorden</a> | <a href="#test">Wijzigen</a> | <a href="Archiveren">archiveren</a>';
+                                    //echo '<a href="probes/index/'.$company["company_id"].'"><i class="fa fa-link fa-lg" title="Manage connected LoRa devices" aria-hidden="true"></i></a> | ';
+                                    //echo '<a href="companies/edit/'.$company["company_id"].'"><i class="fa fa-pencil-square-o fa-lg" title="Edit this company" aria-hidden="true"></i></a> | ';
+                                    //echo '<a href="companies/delete/'.$company["company_id"].'"><i class="fa fa-trash fa-lg" title="Delete this company" aria-hidden="true"></i></a> ';
+                                echo '</td>';
+                            echo '<tr>';
+                        }
+                        if($this->obj->data["reservations"] == null){
+                            echo '<tr><td><b style="color: #999">#0</b></td><td colspan="3"><i style="color: #999; font-weight: bold;">No reservations found</i></td></tr>';
+                        }
 
-                ?>
+                    ?>
+
                 </tbody>
             </table>
             <br /><br />
