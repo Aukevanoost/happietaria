@@ -63,9 +63,10 @@ class cReservering
     }
 
 
-    public function bekijken(){
+    public function beoordelen(){
         $_GET["template"] = "private";
         $_GET["page_title"] = "Reservering bekijken";
+        $this->data["status"] = $this->model->getStates();
 
         $this->data["reservation"] = $this->model->getFromId($_GET["id"]);
     }
