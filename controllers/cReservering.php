@@ -75,18 +75,21 @@ class cReservering
         $_GET["template"] = "private";
         $_GET["page_title"] = "Een mail";
         $this->data["reservation"] = $this->model->getFromId($_GET["id"]);
+        $this->data["message"] = "";
 
         if(isset($_POST["JUDGE"])) {
             $this->data["mail"] = $this->model->getMailData($_POST["JUDGE"], $this->data["reservation"]);
-        }else{
-            header('location: /reservering/beoordelen/'.$_GET["id"]);
+        }elseif(isset($_POST["confirmation"]) && $_POST["confirmation"] == "mailOk"){
+            if(isset($_POST["isAccepted"]) && ($_POST["isAccepted"] == 2 || $_POST["isAccepted"] == 1) ){
+                $this->data["message"] = $this->model->acceptOrRefuseReservation($this->data["reservation"], $_POST["isAccepted"]);
+                $this->data["message"] .= $this->model->sendReservationMail($this->data["reservation"]);
+                $this->data["mail"] = array("subject" => $_POST["onderwerp"], "message" => $_POST["inhoud"]);
+            }else{
+                $this->data["message"] = '<div class="chip">Something went terribly wrong, please try again.<i class="close material-icons">close</i></div>';
+            }
+        }else {
+            $this->data["message"] = "<div class=\"chip\">Whats this? a bug?.<i class=\"close material-icons\">close</i></div>";
         }
 
-        if(isset($_POST["confirmation"]) && $_POST["confirmation"] == "mailOk"){
-            $this->data["message"] = $this->model->sendReservationMail($this->data["reservation"]);
-            $this->data["mail"] = array("subject" => $_POST["onderwerp"], "message" => $_POST["inhoud"]);
-        }else{
-            $this->data["message"] = "";
-        }
     }
 }

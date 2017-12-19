@@ -11,42 +11,82 @@ $r["reservering"] = new DateTime($r["reservering"]);
             <div class="col s12">
                 <div class="card">
                     <div class="card-content">
-                        <a href="/reservering/index" class="btn orange darken-2">NAAR OVERZICHT</a>
+                        <a href="/reservering/beoordelen/<?= $_GET["id"] ?>" class="btn orange darken-2">VORIGE STAP</a>
                     </div>
                 </div>
             </div>
-            <div class="col s12">
+            <div class="col s8">
                 <div class="card" style="min-height: 550px">
                     <div class="card-content">
 
-                        <h3>De klant informeren</h3>
+                        <h3> Stuur de klant een mail!</h3>
                         <?= $this->obj->data["message"]; ?>
 
                         <br />
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input placeholder="Typ hier het onderwerp van de mail" value="<?=  $m["subject"] ?>" type="text" id="onderwerp" name="onderwerp" class="validate">
+                                <input style="background: #efefef; border-top: 1px solid #999; padding-left: 15px" placeholder="Typ hier het onderwerp van de mail" value="<?=  $m["subject"] ?>" type="text" id="onderwerp" name="onderwerp" class="validate">
                                 <label for="onderwerp">ONDERWERP</label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea style="min-height: 250px; background: #eee; box-sizing: border-box; padding: 15px;" id="message" name="inhoud" class="materialize-textarea"><?= $m["message"];  ?></textarea>
+                                <textarea style="min-height: 290px; background: #efefef; border-top: 1px solid #999; box-sizing: border-box; padding: 15px;" id="message" name="inhoud" class="materialize-textarea"><?= $m["message"];  ?></textarea>
                                 <label for="message">INHOUD VAN DE MAIL</label>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col s4">
+                <div class="card"  style="height: 550px">
+                    <div class="card-content">
+                        <h3>Reservering</h3>
+                        <br />
+                        <table class="table bordered">
+                            <tr>
+                                <th><i class="material-icons">account_circle</i></th>
+                                <td><?= $r["voornaam"] . ' ' . $r["achternaam"] ?></td>
+                            </tr>
+                            <tr>
+                                <th><i class="material-icons">mail</i></th>
+                                <td><a href="mailto:<?= $r["email"] ?>"><?= $r["email"] ?></a></td>
+                            </tr>
+                            <tr>
+                                <th><i class="material-icons">phone_iphone</i></th>
+                                <td><?= $r["telefoon"] ?></td>
+                            </tr>
+                            <tr>
+                                <th><i class="material-icons">people</i></th>
+                                <td><b><?= $r["personen"] ?></b> personen</td>
+                            </tr>
+                            <tr>
+                                <th><i class="material-icons">date_range</i></th>
+                                <td><?= $r["reservering"]->format('d F Y') ?> om <?= $r["reservering"]->format('H:i') ?></td>
+                            </tr>
+                            <tr>
+                                <th><i class="material-icons">comment</i></th>
+                                <td><i><?= $r["opmerking"] ?></i></td>
+                            </tr>
+                        </table>
 
+                    </div>
+                </div>
             </div>
             <div class="col s12">
                 <div class="card">
                     <div class="card-content">
-                        <form action="/reservering/sendmail/<?=$_GET["id"] ?>" method="post">
-                            <button type="submit" name="confirmation" value="mailOk" class="btn green darken-1 right" style="margin-left: 10px">Send mail</button>
-                        </form>
+                        <?php
+                            if(isset($_POST["JUDGE"])) {
+                                $acc = ($_POST["JUDGE"] == "ACCEPT") ? 1 : 2 ;
+                                echo '<input type="hidden" name="isAccepted" value="'.$acc.'"/>';
+                            }
+
+                        ?>
+
+                        <button type="submit" name="confirmation" value="mailOk" class="btn green darken-1 right" style="margin-left: 10px">Send mail</button>
 
                         <div style="clear:both"></div>
                     </div>

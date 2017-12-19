@@ -138,7 +138,7 @@ class mReservering{
 
     public function getReservationsFromState($state){
         $data = array();
-        $stmt = $this->Conn->prepare("SELECT g.*, r.*, s.naam as status FROM `reservering` r LEFT JOIN gebruiker g ON r.gebruiker_id = g.gebruiker_id LEFT JOIN status s ON s.status_id = r.status_id WHERE r.geaccepteerd != 2 AND r.status_id = ".$state);
+        $stmt = $this->Conn->prepare("SELECT g.*, r.*, s.naam as status FROM `reservering` r LEFT JOIN gebruiker g ON r.gebruiker_id = g.gebruiker_id LEFT JOIN status s ON s.status_id = r.status_id WHERE r.status_id = ".$state);
 
 
         if($stmt->execute()){
@@ -246,6 +246,17 @@ Het Zwolse Happietaria Team.
         tMailing::sendAcceptRefuseMail($reservation["email"], $onderwerp, $inhoud);
 
 
+        return '<div class="chip">Mail is verstuurd<i class="close material-icons">close</i></div>';
         //<div class="chip">New status has succesfully been added<i class="close material-icons">close</i></div>
+    }
+
+    public function acceptOrRefuseReservation($r, $isAccepted){
+            // Standaard input
+            $stmt = $this->Conn->prepare("UPDATE reservering SET geaccepteerd = :accept, status_id = 2 WHERE reservering_id = ".$r["reservering_id"]);
+
+            $stmt->bindParam(':accept',$isAccepted);
+
+            $stmt->execute();
+            return '<div class="chip">Reservering is succesvol beoordeeld<i class="close material-icons">close</i></div>';
     }
 }
