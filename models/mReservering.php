@@ -7,7 +7,9 @@ namespace Models;
 
 use core\Database;
 use PDO;
+use DateTime;
 use tools\tSecurity;
+use tools\tMailing;
 
 class mReservering{
 
@@ -202,5 +204,48 @@ class mReservering{
         //    header("location: /pages/nopermission");
         //}
         return $data;
+    }
+
+
+
+
+    public function getMailData($j,$r){
+        $data = array();
+
+
+        // Mail voorbereiden
+        $accept = ($j == 'ACCEPT') ? " geaccepteerd en verwerkt hebben! we zien u graag op het betreffende tijdstip." : "helaas op dat moment geen plek meer over hebben. We raden u aan om een ander tijdstip te proberen." ;
+
+        $r["reservering"] = new DateTime($r["reservering"]);
+        $datetime = $r["reservering"]->format('d M \o\m H:i');
+
+        // subject
+        $data["subject"] = "Betreft: uw reservering #".$r["reservering_id"] . " - Happietaria Zwolle";
+
+
+        // uiteindelijke bericht
+        $data["message"] = "Geachte heer/mevr ".$r["achternaam"]."\n\n
+We hebben uw aanvraag van ".$datetime." bekeken en delen u bij deze mede dat 
+Wij de reservering ".$accept."
+
+Voor meer vragen/opmerkingen kunt u altijd contact met ons opnemen via het contactformulier.\n\n
+Met vriendelijke groet, \n
+Het Zwolse Happietaria Team.
+        ";
+
+        return $data;
+    }
+
+
+
+    public function sendReservationMail($reservation){
+        $onderwerp = filter_var($_POST["onderwerp"],FILTER_SANITIZE_STRING);
+        $inhoud = filter_var($_POST["inhoud"],FILTER_SANITIZE_STRING);
+
+
+        tMailing::sendAcceptRefuseMail($reservation["email"], $onderwerp, $inhoud);
+
+
+        //<div class="chip">New status has succesfully been added<i class="close material-icons">close</i></div>
     }
 }

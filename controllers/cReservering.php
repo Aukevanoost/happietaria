@@ -70,4 +70,23 @@ class cReservering
 
         $this->data["reservation"] = $this->model->getFromId($_GET["id"]);
     }
+
+    public function sendmail(){
+        $_GET["template"] = "private";
+        $_GET["page_title"] = "Een mail";
+        $this->data["reservation"] = $this->model->getFromId($_GET["id"]);
+
+        if(isset($_POST["JUDGE"])) {
+            $this->data["mail"] = $this->model->getMailData($_POST["JUDGE"], $this->data["reservation"]);
+        }else{
+            header('location: /reservering/beoordelen/'.$_GET["id"]);
+        }
+
+        if(isset($_POST["confirmation"]) && $_POST["confirmation"] == "mailOk"){
+            $this->data["message"] = $this->model->sendReservationMail($this->data["reservation"]);
+            $this->data["mail"] = array("subject" => $_POST["onderwerp"], "message" => $_POST["inhoud"]);
+        }else{
+            $this->data["message"] = "";
+        }
+    }
 }

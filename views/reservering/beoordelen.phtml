@@ -9,7 +9,7 @@
         <div class="col s12">
             <div class="card">
                 <div class="card-content">
-                    <a href="/reservering/index" class="btn red darken-3">NAAR OVERZICHT</a>
+                    <a href="/reservering/index" class="btn orange darken-2">NAAR OVERZICHT</a>
                 </div>
             </div>
         </div>
@@ -23,19 +23,7 @@
                         <tr>
                             <th>Status:</th>
                             <td>
-                                <div style="margin-bottom: -30px">
-                                    <select class="form-control" name="status">
-                                        <?php
-                                        foreach($this->obj->data["status"] as $status){
-                                            if($status["naam"] == $r["naam"]){
-                                                echo '<option value="'.$status["status_id"].'" selected>'.$status["naam"].'</option>';
-                                            }else{
-                                                echo '<option value="'.$status["status_id"].'">'.$status["naam"].'</option>';
-                                            }
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
+                                <div style="margin-bottom: -30px"><?= $r["naam"] ?></div>
 
                             </td>
                         </tr>
@@ -95,8 +83,11 @@
         <div class="col s12">
             <div class="card">
                 <div class="card-content">
-                    <input type="submit" name="JUDGE" value="ACCEPTEREN" class="btn green darken-1 right" style="margin-left: 10px"/>
-                    <input type="submit" name="JUDGE" value="WEIGEREN" class="btn  red  darken-3 right"/>
+                    <form action="/reservering/sendmail/<?=$_GET["id"] ?>" method="post">
+                        <input type="submit" name="JUDGE" value="ACCEPT" class="btn green darken-1 right" style="margin-left: 10px"/>
+                        <input type="submit" name="JUDGE" value="REFUSE" class="btn  red  darken-3 right"/>
+                    </form>
+
                     <div style="clear:both"></div>
                 </div>
             </div>
