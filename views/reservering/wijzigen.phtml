@@ -1,0 +1,122 @@
+<?php
+$r =  $this->obj->data["reservation"];
+$r["reservering"] = new DateTime($r["reservering"]);
+
+?>
+<br />
+<div class="container">
+    <form action="" method="post">
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Reservering #<?= $r["reservering_id"] ?> wijzigen</h3>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="card" style="height: 550px">
+                    <div class="card-content">
+                        <?= $this->obj->data["message"]; ?>
+
+                        <br />
+                        <table class="table bordered">
+                            <tr>
+                                <th>Status:</th>
+                                <td>
+                                    <div style="margin-bottom: -30px">
+                                        <select class="form-control" name="status">
+                                            <?php
+                                            foreach($this->obj->data["status"] as $status){
+                                                if($status["naam"] == $r["naam"]){
+                                                    echo '<option value="'.$status["status_id"].'" selected>'.$status["naam"].'</option>';
+                                                }else{
+                                                    echo '<option value="'.$status["status_id"].'">'.$status["naam"].'</option>';
+                                                }
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Geaccepteerd:</th>
+                                <td><?php
+                                    switch($r["geaccepteerd"]){
+                                        case 0: echo "<b style='color: #ff9800 '>Nog niet beoordeeld</b>";break;
+                                        case 1: echo "<b style='color: #0c0'>Ja</b>";break;
+                                        case 2: echo "<b style='color: #c00'>Nee</b>";break;
+                                    }
+                                    ?></td>
+                            </tr>
+                            <tr>
+                                <th>Aantal personen:</th>
+                                <td>
+                                    <div style="margin-bottom: -30px;margin-top: -10px;">
+                                        <input type="number" style="width:50px; height: 30px; text-align: center;" name="personen" value="<?= $r["personen"] ?>" /> <b>personen</b>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Datum / Tijd:</th>
+                                <td>
+                                    <div style="margin-bottom: -30px">
+                                        <input type="date" style="width:145px; height: 30px;" name="date" value="<?= $r["reservering"]->format('Y-m-d') ?>"/>&nbsp; om &nbsp;
+                                        <input type="time" style="width:70px; height: 30px;" name="time" value="<?= $r["reservering"]->format('H:i') ?>"/>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Opmerking:</th>
+                                <td><i><?= $r["opmerking"] ?></i></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="card"  style="height: 550px">
+                    <div class="card-content">
+                        <h3>Aangemaakt door:</h3>
+                        <br />
+                        <table class="table bordered">
+                            <tr>
+                                <th>Naam:</th>
+                                <td><?= $r["voornaam"] . ' ' . $r["achternaam"] ?></td>
+                            </tr>
+                            <tr>
+                                <th>Email:</th>
+                                <td><a href="mailto:<?= $r["email"] ?>"><?= $r["email"] ?></a></td>
+                            </tr>
+                            <tr>
+                                <th>Telefoon:</th>
+                                <td><?= $r["telefoon"] ?></td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                            <input type="submit" name="Opslaan" value="wijzigen" class="btn  red orange darken-2 right"/>
+                            <a href="reservering/index" class="btn-flat right">ANNULEREN</a>
+
+
+                        <div style="clear:both"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>

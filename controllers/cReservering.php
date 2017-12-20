@@ -66,7 +66,7 @@ class cReservering
     public function beoordelen(){
         $_GET["template"] = "private";
         $_GET["page_title"] = "Reservering bekijken";
-        $this->data["status"] = $this->model->getStates();
+        //$this->data["status"] = $this->model->getStates();
 
         $this->data["reservation"] = $this->model->getFromId($_GET["id"]);
     }
@@ -91,5 +91,22 @@ class cReservering
             $this->data["message"] = "<div class=\"chip\">Whats this? a bug?.<i class=\"close material-icons\">close</i></div>";
         }
 
+    }
+
+
+    public function wijzigen(){
+        $_GET["template"] = "private";
+        $_GET["page_title"] = "Reservering bekijken";
+
+
+        if(!empty($_POST)){
+            $this->data["message"] = $this->model->editReservation();
+        }else{
+            $this->data["message"] = "";
+        }
+
+
+        $this->data["status"] = $this->model->getStates();
+        $this->data["reservation"] = $this->model->getFromId($_GET["id"]);
     }
 }

@@ -250,6 +250,9 @@ Het Zwolse Happietaria Team.
         //<div class="chip">New status has succesfully been added<i class="close material-icons">close</i></div>
     }
 
+
+
+
     public function acceptOrRefuseReservation($r, $isAccepted){
             // Standaard input
             $stmt = $this->Conn->prepare("UPDATE reservering SET geaccepteerd = :accept, status_id = 2 WHERE reservering_id = ".$r["reservering_id"]);
@@ -258,5 +261,44 @@ Het Zwolse Happietaria Team.
 
             $stmt->execute();
             return '<div class="chip">Reservering is succesvol beoordeeld<i class="close material-icons">close</i></div>';
+    }
+
+
+
+
+    public function editReservation(){
+        $data = "";
+
+
+        //$phone = preg_replace('/[^-\+\s_0-9]/',"",$_POST["phone"]);
+        //$fullname = filter_var($_POST["fullname"],FILTER_SANITIZE_STRING);
+        //$email = filter_var($_POST["email"],FILTER_SANITIZE_EMAIL);
+
+        $status = preg_replace('/[^0-9]/',"",$_POST["status"]);
+        $pers = preg_replace('/[^0-9]/',"",$_POST["personen"]);
+        $datetime = DateTime::createFromFormat('Y-m-d H:i', $_POST["date"].' '.$_POST["time"]);
+        $datetime = $datetime->format('Y-m-d H:i:s');
+
+
+        try{
+
+            // Standaard input
+            $stmt = $this->Conn->prepare("UPDATE reservering SET reservering = :reservering, personen = :personen, status_id = :status_id WHERE reservering_id = ".$_GET["id"]);
+
+
+            $stmt->bindParam(':status_id',$status);
+            $stmt->bindParam(':personen',$pers);
+            $stmt->bindParam(':reservering',$datetime);
+
+
+            $stmt->execute();
+
+            $data = '<div class="chip">Reservering is succesvol gewijzigd!<i class="close material-icons">close</i></div>';
+        }catch(Exception $ex){
+            $data = '<div class="chip">Tijdens het wijzigen van de reservering ging er iets mis<i class="close material-icons">close</i></div>';
+        }
+
+
+        return $data;
     }
 }
