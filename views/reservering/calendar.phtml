@@ -24,7 +24,7 @@
                 <th>Tijd</th>
                 <th>Op naam van</th>
                 <th>Telefoonnummer</th>
-                <th>Geaccepteerd</th>
+                <th>Status</th>
                 <th></th>
                 </thead>
                 <tbody>
@@ -41,7 +41,7 @@
                     echo '<td>'.$r["reservering"]->format('H:i').'</td>';
                     echo '<td>'.$r["voornaam"].' '.$r["achternaam"].'</a></td>';
                     echo '<td>'.$r["telefoon"].'</td>';
-                    echo '<td>'.$r["geaccepteerd"].'</td>';
+                    echo '<td>'.$r["status"].'</td>';
 
                     echo '<td style="text-align: right; min-width: 80px !Important">';
                     if($geaccepteerd) {
