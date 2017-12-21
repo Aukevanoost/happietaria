@@ -7,7 +7,7 @@
  */
 
     session_start();
-
+    setlocale(LC_ALL, 'nl_NL');
     include_once('./core/App.php');
     include_once('./core/Autoloader.php');
     include_once('./core/Database.php');

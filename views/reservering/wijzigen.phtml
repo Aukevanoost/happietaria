@@ -10,7 +10,7 @@ $r["reservering"] = new DateTime($r["reservering"]);
             <div class="col s12">
                 <div class="card">
                     <div class="card-content">
-                        <h3>Reservering #<?= $r["reservering_id"] ?> wijzigen</h3>
+                        <a href="/pages/dashboard">overzicht</a> > <a href="/reservering/index">reserveringen</a> > reservering wijzigen
 
                     </div>
                 </div>
@@ -18,15 +18,18 @@ $r["reservering"] = new DateTime($r["reservering"]);
             <div class="col s6">
                 <div class="card" style="height: 550px">
                     <div class="card-content">
+                        <h4>Details  </h4>
+
                         <?= $this->obj->data["message"]; ?>
 
                         <br />
                         <table class="table bordered">
+
                             <tr>
                                 <th>Status:</th>
                                 <td>
                                     <div style="margin-bottom: -30px">
-                                        <select class="form-control" name="status">
+                                        <select class="form-control" name="status" style="height: 30px;">
                                             <?php
                                             foreach($this->obj->data["status"] as $status){
                                                 if($status["naam"] == $r["naam"]){
@@ -40,6 +43,10 @@ $r["reservering"] = new DateTime($r["reservering"]);
                                     </div>
 
                                 </td>
+                            </tr>
+                            <tr>
+                                <th>Reservering ID</th>
+                                <td><b>#<?= $r["reservering_id"] ?></b></td>
                             </tr>
                             <tr>
                                 <th>Geaccepteerd:</th>
@@ -81,20 +88,34 @@ $r["reservering"] = new DateTime($r["reservering"]);
             <div class="col s6">
                 <div class="card"  style="height: 550px">
                     <div class="card-content">
-                        <h3>Aangemaakt door:</h3>
+                        <h4>Klant</h4>
                         <br />
                         <table class="table bordered">
+                            <input type="hidden" name="user_id" value="<?= $r["gebruiker_id"] ?>" />
                             <tr>
-                                <th>Naam:</th>
-                                <td><?= $r["voornaam"] . ' ' . $r["achternaam"] ?></td>
+                                <th><i class="material-icons">account_circle</i></th>
+                                <td>
+                                    <div style="margin-bottom: -30px;margin-top: -10px;">
+                                        <input type="text" style="width:30%; height: 30px;" name="voornaam" value="<?= $r["voornaam"] ?>" />
+                                        <input type="text" style="width:45%; height: 30px;" name="achternaam" value="<?= $r["achternaam"] ?>" />
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <th>Email:</th>
-                                <td><a href="mailto:<?= $r["email"] ?>"><?= $r["email"] ?></a></td>
+                                <th><i class="material-icons">mail</i></th>
+                                <td>
+                                    <div style="margin-bottom: -30px;margin-top: -10px;">
+                                        <input type="text" style="width:75%; height: 30px; margin-right: 10px" name="email" value="<?= $r["email"] ?>" />
+                                    </div>
+                                </td>
                             </tr>
                             <tr>
-                                <th>Telefoon:</th>
-                                <td><?= $r["telefoon"] ?></td>
+                                <th><i class="material-icons">phone_iphone</i></th>
+                                <td>
+                                    <div style="margin-bottom: -30px;margin-top: -10px;">
+                                        <input type="text" style="width:75%; height: 30px; margin-right: 10px" name="phone" value="<?= $r["telefoon"] ?>" />
+                                    </div>
+                                </td>
                             </tr>
                         </table>
 
@@ -105,7 +126,7 @@ $r["reservering"] = new DateTime($r["reservering"]);
                 <div class="card">
                     <div class="card-content">
                             <input type="submit" name="Opslaan" value="wijzigen" class="btn  red orange darken-2 right"/>
-                            <a href="reservering/index" class="btn-flat right">ANNULEREN</a>
+                            <a href="reservering/index/<?= $r["section"] ?>" class="btn-flat right">ANNULEREN</a>
 
 
                         <div style="clear:both"></div>
