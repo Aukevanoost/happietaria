@@ -1,0 +1,18 @@
+diff a/.idea/workspace.xml b/.idea/workspace.xml	(rejected hunks)
+@@ -191,12 +191,12 @@
+         <option value="$PROJECT_DIR$/template/headers/private.phtml" />
+         <option value="$PROJECT_DIR$/views/reservering/statussen.phtml" />
+         <option value="$PROJECT_DIR$/views/reservering/bekijken.phtml" />
+-        <option value="$PROJECT_DIR$/views/reservering/index.phtml" />
+-        <option value="$PROJECT_DIR$/views/reservering/sendmail.phtml" />
+-        <option value="$PROJECT_DIR$/controllers/cReservering.php" />
+         <option value="$PROJECT_DIR$/views/reservering/beoordelen.phtml" />
+-        <option value="$PROJECT_DIR$/models/mReservering.php" />
+         <option value="$PROJECT_DIR$/tools/tMailing.php" />
++        <option value="$PROJECT_DIR$/controllers/cReservering.php" />
++        <option value="$PROJECT_DIR$/views/reservering/sendmail.phtml" />
++        <option value="$PROJECT_DIR$/models/mReservering.php" />
++        <option value="$PROJECT_DIR$/views/reservering/index.phtml" />
+       </list>
+     </option>
+   </component>

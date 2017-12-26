@@ -27,7 +27,17 @@ class cPages
         $this->data = array();
     }
 
+    public function project(){
+        $_GET["page_title"] = "project";
+        $_GET["template"] = "public";
+        $this->data = array();
+    }
 
+    public function sponsoring(){
+        $_GET["page_title"] = "sponsoring";
+        $_GET["template"] = "public";
+        $this->data = array();
+    }
 
     public function inloggen(){
         $_GET["page_title"] = "Inloggen";
