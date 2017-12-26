@@ -23,14 +23,56 @@ class cReservering
 
         $this->data = array();
 
+        // kleine check
+        if($_GET["id"] != "" && !(is_numeric($_GET["id"])) ){
+            header("location: /reservering/index/1");
+        }
 
         // get statuses
-        $this->data["states"] = $this->model->getTable("status");
+        $this->data["states"] = $this->model->getCategories("status");
 
         // get reservations
         $_GET["id"] = ($_GET["id"] == "") ? 1 : $_GET["id"];
         $this->data["reservations"] = $this->model->getReservationsFromState($_GET["id"]);
+
+
     }
+
+
+
+    public function calendar(){
+        $_GET["page_title"] = "Reserveringen";
+        $_GET["template"] = "private";
+
+        $this->data = array();
+
+        // kleine check
+        //if($_GET["id"] != "" && !(is_numeric($_GET["id"])) ){
+        //    header("location: /reservering/index/1");
+        //}
+
+        // Navigation
+        if(isset($_POST["navigate"])){
+            if($_POST["navigate"] == "addDay"){
+                $newdate = date('Y-m-d', strtotime("+1 day",strtotime($_GET["id"]) ));
+                header('location: /reservering/calendar/'.$newdate);
+            }elseif ($_POST["navigate"] == "remDay"){
+                $newdate = date('Y-m-d', strtotime("-1 day",strtotime($_GET["id"]) ));
+                header('location: /reservering/calendar/'.$newdate);
+            }else{
+                header('location: /reservering/calendar/'.$_POST["newDate"]);
+            }
+        }
+
+        // get statuses
+
+        // get reservations
+        $_GET["id"] = ($_GET["id"] == "") ? 1 : $_GET["id"];
+        $this->data["reservations"] = $this->model->getReservationsFromDate($_GET["id"]);
+
+
+    }
+
 
 
 
@@ -66,7 +108,7 @@ class cReservering
     public function beoordelen(){
         $_GET["template"] = "private";
         $_GET["page_title"] = "Reservering bekijken";
-        $this->data["status"] = $this->model->getStates();
+        //$this->data["status"] = $this->model->getStates();
 
         $this->data["reservation"] = $this->model->getFromId($_GET["id"]);
     }
@@ -91,5 +133,22 @@ class cReservering
             $this->data["message"] = "<div class=\"chip\">Whats this? a bug?.<i class=\"close material-icons\">close</i></div>";
         }
 
+    }
+
+
+    public function wijzigen(){
+        $_GET["template"] = "private";
+        $_GET["page_title"] = "Reservering bekijken";
+
+
+        if(!empty($_POST)){
+            $this->data["message"] = $this->model->editReservation();
+        }else{
+            $this->data["message"] = "";
+        }
+
+
+        $this->data["status"] = $this->model->getStates();
+        $this->data["reservation"] = $this->model->getFromId($_GET["id"]);
     }
 }

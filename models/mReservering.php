@@ -29,7 +29,7 @@ class mReservering{
     public function getFromId($reservering){
         $data = array();
         $qry = "
-			SELECT r.*, s.*, g.*               
+			SELECT r.*, s.*, g.*, s.status_id as section              
 			FROM reservering r                
 			LEFT JOIN gebruiker g ON g.gebruiker_id = r.gebruiker_id                
 			LEFT JOIN status s ON s.status_id = r.status_id                 
@@ -46,13 +46,15 @@ class mReservering{
 
 
 
+
+
     /*
      * Haalt alle statussen op
      *
      */
-    public function getTable($table){
+    public function getCategories(){
         $data = array();
-        $stmt = $this->Conn->prepare("SELECT * FROM ".$table);
+        $stmt = $this->Conn->prepare("SELECT s.status_id, s.naam, COUNT(r.reservering_id) as items FROM status s LEFT JOIN reservering r ON s.status_id = r.status_id GROUP BY s.status_id");
 
 
         if($stmt->execute()){
@@ -139,6 +141,28 @@ class mReservering{
     public function getReservationsFromState($state){
         $data = array();
         $stmt = $this->Conn->prepare("SELECT g.*, r.*, s.naam as status FROM `reservering` r LEFT JOIN gebruiker g ON r.gebruiker_id = g.gebruiker_id LEFT JOIN status s ON s.status_id = r.status_id WHERE r.status_id = ".$state);
+
+
+        if($stmt->execute()){
+            while($company = $stmt->fetch()){
+                array_push($data, $company);
+            }
+        }
+
+
+        return $data;
+    }
+
+
+
+    /*
+     * Haalt alle reserveringen op van een bepaalde status
+     *
+     */
+
+    public function getReservationsFromDate($date){
+        $data = array();
+        $stmt = $this->Conn->prepare("SELECT g.*, r.*, s.naam as status FROM `reservering` r LEFT JOIN gebruiker g ON r.gebruiker_id = g.gebruiker_id LEFT JOIN status s ON s.status_id = r.status_id WHERE geaccepteerd = 1 AND reservering BETWEEN '".$date." 00:00:00' AND '".$date." 23:59:59' ORDER BY reservering ");
 
 
         if($stmt->execute()){
@@ -250,6 +274,9 @@ Het Zwolse Happietaria Team.
         //<div class="chip">New status has succesfully been added<i class="close material-icons">close</i></div>
     }
 
+
+
+
     public function acceptOrRefuseReservation($r, $isAccepted){
             // Standaard input
             $stmt = $this->Conn->prepare("UPDATE reservering SET geaccepteerd = :accept, status_id = 2 WHERE reservering_id = ".$r["reservering_id"]);
@@ -258,5 +285,57 @@ Het Zwolse Happietaria Team.
 
             $stmt->execute();
             return '<div class="chip">Reservering is succesvol beoordeeld<i class="close material-icons">close</i></div>';
+    }
+
+
+
+
+    public function editReservation(){
+        $data = "";
+
+
+        $phone = preg_replace('/[^-\+\s_0-9]/',"",$_POST["phone"]);
+        $voornaam = filter_var($_POST["voornaam"],FILTER_SANITIZE_STRING);
+        $achternaam = filter_var($_POST["achternaam"],FILTER_SANITIZE_STRING);
+        $email = filter_var($_POST["email"],FILTER_SANITIZE_EMAIL);
+
+        $status = preg_replace('/[^0-9]/',"",$_POST["status"]);
+        $user_id = preg_replace('/[^0-9]/',"",$_POST["user_id"]);
+        $pers = preg_replace('/[^0-9]/',"",$_POST["personen"]);
+        $datetime = DateTime::createFromFormat('Y-m-d H:i', $_POST["date"].' '.$_POST["time"]);
+        $datetime = $datetime->format('Y-m-d H:i:s');
+
+
+        try{
+            // Inschrijving wijzigen
+            $stmt = $this->Conn->prepare("UPDATE reservering SET reservering = :reservering, personen = :personen, status_id = :status_id WHERE reservering_id = ".$_GET["id"]);
+
+            $stmt->bindParam(':status_id',$status);
+            $stmt->bindParam(':personen',$pers);
+            $stmt->bindParam(':reservering',$datetime);
+
+            $stmt->execute();
+
+
+            // Gebruiker wijzigen
+            $stmt = $this->Conn->prepare("UPDATE gebruiker SET voornaam = :voornaam, achternaam = :achternaam, email = :email, telefoon = :telefoon WHERE gebruiker_id = :gebruiker_id");
+
+            $stmt->bindParam(':voornaam',$voornaam);
+            $stmt->bindParam(':achternaam',$achternaam);
+            $stmt->bindParam(':email',$email);
+            $stmt->bindParam(':telefoon',$phone);
+            $stmt->bindParam(':gebruiker_id',$user_id);
+
+            $stmt->execute();
+
+
+            // Confirmation bericht
+            $data = '<div class="chip">Reservering is succesvol gewijzigd!<i class="close material-icons">close</i></div>';
+        }catch(Exception $ex){
+            $data = '<div class="chip">Tijdens het wijzigen van de reservering ging er iets mis<i class="close material-icons">close</i></div>';
+        }
+
+
+        return $data;
     }
 }

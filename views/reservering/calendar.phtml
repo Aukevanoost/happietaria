@@ -1,0 +1,70 @@
+<br />
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+            <?php
+
+            ?>
+            <form action="" method="post" class="left">
+                <button type="submit" name="navigate" value="remDay" class="btn-floating light-blue darken-3 left"><i class="material-icons">arrow_back</i></button>
+                <input type="date" name="newDate" value="<?= $_GET["id"] ?>" class="validate left" style="width: 160px; margin: 0px 15px; height: 35px" >
+                <button type="submit" name="navigate" value="setDate" class="btn-floating green left"><i class="material-icons" >event</i></button>
+                <button type="submit" name="navigate" value="addDay" class="btn-floating light-blue darken-3 left" style="margin-left: 10px"><i class="material-icons">arrow_forward</i></button>
+            </form>
+            <a href="/reservering/index" class="btn-floating right  green darken-2"><i class="material-icons">dvr</i></a>
+            <br />
+            <div style="clear: both"></div>
+            <hr />
+            <br />
+            <br />
+            <h4><span class="light-blue darken-3" style="color: #fff; padding: 5px 12px; border-radius: 4px;"><?=  date("l", strtotime($_GET["id"])) ?></span> <?=  date("j F Y", strtotime($_GET["id"])) ?></h4>
+            <br />
+            <table  class="table bordered">
+                <thead>
+                <th>Tijd</th>
+                <th>Op naam van</th>
+                <th>Telefoonnummer</th>
+                <th>Status</th>
+                <th></th>
+                </thead>
+                <tbody>
+                <?php
+                foreach($this->obj->data["reservations"] as $r){
+                    $geaccepteerd = ($r["geaccepteerd"] == 0) ? false : true;
+                    switch($r["geaccepteerd"]){
+                        case 0: $r["geaccepteerd"] = "Nog niet behandeld";break;
+                        case 1: $r["geaccepteerd"] = "<b style='color: #0c0'>Ja</b>";break;
+                        case 2: $r["geaccepteerd"] = "<b style='color: #c00'>Nee</b>";break;
+                    }
+                    $r["reservering"] = new DateTime($r["reservering"]);
+                    echo '<tr>';
+                    echo '<td>'.$r["reservering"]->format('H:i').'</td>';
+                    echo '<td>'.$r["voornaam"].' '.$r["achternaam"].'</a></td>';
+                    echo '<td>'.$r["telefoon"].'</td>';
+                    echo '<td>'.$r["status"].'</td>';
+
+                    echo '<td style="text-align: right; min-width: 80px !Important">';
+                    if($geaccepteerd) {
+                        // echo '<a href="reservering/bekijken/' . $r["reservering_id"] . '">Bekijken</a> | ';
+                        //echo '<a href="/reservering/index">Beantwoorden</a> |';
+                        echo '<a href="/reservering/wijzigen/' . $r["reservering_id"] . '">Wijzigen</a> ';
+                        //echo '<a href="/reservering/index">archiveren</a>';
+                    }else{
+                        echo '<a class="btn green darken-1" href="/reservering/beoordelen/' . $r["reservering_id"] . '">beoordelen</a>';
+                    }
+                    echo '</td>';
+                    echo '<tr>';
+                }
+                if($this->obj->data["reservations"] == null){
+                    echo '<tr><td><b style="color: #999">#0</b></td><td colspan="3"><i style="color: #999; font-weight: bold;">No reservations found</i></td></tr>';
+                }
+
+                ?>
+
+                </tbody>
+            </table>
+            <br /><br />
+            <br /><br />
+        </div>
+    </div>
+</div>
