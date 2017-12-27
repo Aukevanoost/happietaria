@@ -1,0 +1,116 @@
+<?php
+$r =  $this->obj->data["reservation"];
+$r["datum"] = new DateTime($r["datum"]);
+$r["begin_tijd"] = new DateTime($r["begin_tijd"]);
+$r["eind_tijd"] = new DateTime($r["eind_tijd"]);
+?>
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <a href="/pages/dashboard">overzicht</a> > <a href="/reservering/index">reserveringen</a> > reservering bekijken
+
+                </div>
+            </div>
+        </div>
+        <div class="col s6">
+            <div class="card" style="height: 650px">
+                <div class="card-content">
+                    <h4>Details  </h4>
+                    <br />
+                    <table class="table bordered">
+                        <tr>
+                            <th>Status:</th>
+                            <td><?= $r["naam"] ?></td>
+                        </tr>
+                        <tr>
+                            <th>Reservering ID</th>
+                            <td><b>#<?= $r["reservering_id"] ?></b></td>
+                        </tr>
+                        <tr>
+                            <th>Geaccepteerd:</th>
+                            <td><?php
+                                switch($r["geaccepteerd"]){
+                                    case 0: echo "<b style='color: #ff9800 '>Nog niet beoordeeld</b>";break;
+                                    case 1: echo "<b style='color: #0c0'>Ja</b>";break;
+                                    case 2: echo "<b style='color: #c00'>Nee</b>";break;
+                                }
+                                ?></td>
+                        </tr>
+                        <tr>
+                            <th>Aantal personen:</th>
+                            <td><b><?= $r["personen"] ?></b> personen</td>
+                        </tr>
+                        <tr>
+                            <th>Datum/Tijd:</th>
+                            <td><a href="reservering/calendar/<?= $r["datum"]->format('Y-m-d')  ?>" title="In agenda bekijken"><?= $r["datum"]->format('\<\b\>d F  Y') ?></a> van <b><?= $r["begin_tijd"]->format("H:i");?></b> tot <b><?= $r["eind_tijd"]->format("H:i");?></b></td>
+                        </tr>
+                        <tr>
+                            <th>Gekozen shift:</th>
+                            <td><?= $r["shift"] ?></td>
+                        </tr>
+                        <tr>
+                            <th>Opmerking:</th>
+                            <td><i><?= $r["opmerking"] ?></i></td>
+                        </tr>
+                        <tr>
+                            <th>Tafel nummer:</th>
+                            <td><?= $r["tafel_nummer"] ?></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col s6">
+            <div class="card"  style="height: 650px">
+                <div class="card-content">
+                    <h4>Klant</h4>
+                    <br />
+                    <table class="table bordered">
+                        <tr>
+                            <th><i class="material-icons">account_circle</i></th>
+                            <td><?= $r["voornaam"] ?> <?= $r["achternaam"] ?></td>
+                        </tr>
+                        <tr>
+                            <th><i class="material-icons">mail</i></th>
+                            <td><?= $r["email"] ?></td>
+                        </tr>
+                        <tr>
+                            <th><i class="material-icons">phone_iphone</i></th>
+                            <td><?= $r["telefoon"] ?></td>
+                        </tr>
+                        <tr>
+                            <th><i class="material-icons">flag</i></th>
+                            <td>
+                                <div style="margin-bottom: -30px;margin-top: -10px;">
+                                    <b><?= $r["vereniging"] ?></b>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <img src="https://image.flaticon.com/icons/png/512/10/10991.png" style="position: absolute; bottom: -40px; right: 0; width: 300px" />
+                </div>
+            </div>
+        </div>
+        <div class="col s12">
+            <div class="card">
+                <div class="card-content">
+                    <a href="reservering/wijzigen/<?= $_GET["id"]  ?>" class="btn red orange darken-2 right">WIJZIGEN</a>
+                    <a href="reservering/sendmail/<?= $_GET["id"]  ?>" class="btn light-blue darken-2  right" style="margin-right: 10px;">KLANT MAILEN</a>
+                    <a href="" class="btn green darken-2  right" style="margin-right: 10px;">AGENDA</a>
+                    <a href="reservering/index/<?= $r["section"] ?>" class="btn-flat right"  style="margin-right: 10px;">TERUG</a>
+
+
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
