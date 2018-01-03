@@ -24,7 +24,7 @@ class cCrew
 
         $this->data["message"] = "";
         $this->data["verenigingen"] = $this->model->getCommunities();
-        $this->data["shifts"] = $this->model->getShifts();
+        $this->data["skills"] = $this->model->getSkills();
 
         if (!empty($_POST)) {
             $this->data["message"] = $this->model->newCrewMember();
@@ -32,5 +32,29 @@ class cCrew
             $this->data["message"] = "";
         }
 
+    }
+
+
+
+    public function index(){
+        $_GET["page_title"] = "Inschrijvingen";
+        $_GET["template"] = "private";
+
+        $this->data = array();
+
+        // kleine check
+        if($_GET["id"] == "" || !(is_numeric($_GET["id"])) ){
+            header("location: /crew/index/1");
+        }
+
+        // get reservations
+        $_GET["id"] = ($_GET["id"] == "") ? 1 : $_GET["id"];
+        $this->data["registrations"] = $this->model->getRegistrations($_GET["id"]);
+
+
+    }
+
+    public function action(){
+        $this->model->chgRegistration($_GET["id"]);
     }
 }
