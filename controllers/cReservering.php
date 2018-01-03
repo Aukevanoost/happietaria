@@ -2,17 +2,19 @@
 
 namespace controllers;
 
+use Core\Controller;
 use models\mReservering;
 
-class cReservering
+class cReservering extends Controller
 {
     public $data;
     private $model;
+    protected $protected_pages = array('index','calendar','statussen', 'delstatus', 'beoordelen','sendmail', 'bekijken', 'accept', 'archive','wijzigen');
 
 
     public function __construct(){
+        parent::__construct();
         $this->model = new mReservering();
-        $_GET["header"] = true;
     }
 
 

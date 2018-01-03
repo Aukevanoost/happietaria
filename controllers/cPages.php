@@ -2,14 +2,18 @@
 
 namespace controllers;
 
+use Core\Controller;
 use models\mPages;
 
-class cPages
+class cPages extends Controller
 {
+    protected $protected_pages = array('dashboard','uitloggen');
+    private $model;
+    private $data;
 
     public function __construct(){
+        parent::__construct();
         $this->model = new mPages();
-        $_GET["header"] = true;
     }
 
 

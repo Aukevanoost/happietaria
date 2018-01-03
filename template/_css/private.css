@@ -1,3 +1,10 @@
+/* Main style
+---------------------------------------------- */
+body{
+    background: url('/template/images/manager_wallpaper.png') no-repeat center center !important;
+    background-size: cover !important;
+}
+
 /* DASHBOARD
 ---------------------------------------------- */
 .nieuwsItem{

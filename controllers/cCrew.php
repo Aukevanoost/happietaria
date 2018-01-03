@@ -2,18 +2,20 @@
 
 namespace controllers;
 
+use Core\Controller;
 use models\mCrew;
 
-class cCrew
+class cCrew extends Controller
 {
     public $data;
     private $model;
+    protected $protected_pages = array('index','action');
 
 
     public function __construct()
     {
+        parent::__construct();
         $this->model = new mCrew();
-        $_GET["header"] = true;
     }
 
 
@@ -37,6 +39,7 @@ class cCrew
 
 
     public function index(){
+
         $_GET["page_title"] = "Inschrijvingen";
         $_GET["template"] = "private";
 
