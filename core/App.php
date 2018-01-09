@@ -31,6 +31,7 @@ class App
                 $this->obj = new $this->controller();
                 $method = $this->method;
                 $this->obj->$method();
+                $this->Data = $this->obj->Data;
 
                 return $this->getView();
             } else {

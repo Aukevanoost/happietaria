@@ -34,7 +34,7 @@ class cPages extends Controller
     public function project(){
         $_GET["page_title"] = "project";
         $_GET["template"] = "public";
-        $this->data = array();
+        $this->Data["message"] = "Er is nog geen bericht";
     }
 
     public function sponsoring(){
