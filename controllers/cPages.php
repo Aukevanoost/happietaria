@@ -9,14 +9,14 @@ class cPages extends Controller
 {
     protected $protected_pages = array('dashboard','uitloggen');
     private $model;
-    private $data;
+    public $data;
+
 
     public function __construct(){
         parent::__construct();
         $this->model = new mPages();
     }
-
-
+    
 
     public function home(){
         $_GET["page_title"] = "Homepage";
