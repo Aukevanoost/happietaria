@@ -1,7 +1,7 @@
 <?php
 $r =  $this->obj->data["reservation"];
 $m =  $this->obj->data["mail"];
-$r["reservering"] = new DateTime($r["reservering"]);
+$r["datum"] = new DateTime($r["datum"]);
 
 ?>
 <br />
@@ -11,7 +11,7 @@ $r["reservering"] = new DateTime($r["reservering"]);
             <div class="col s12">
                 <div class="card">
                     <div class="card-content">
-                        <a href="/reservering/beoordelen/<?= $_GET["id"] ?>" class="btn orange darken-2">VORIGE STAP</a>
+                        <a href="/pages/dashboard">Overzicht</a> > <a href="/reservering/index">Reserveringen</a> > <a href="/reservering/bekijken/<?= $_GET["id"]?>">Reservering</a> > Klant mailen
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@ $r["reservering"] = new DateTime($r["reservering"]);
                             </tr>
                             <tr>
                                 <th><i class="material-icons">mail</i></th>
-                                <td><a href="mailto:<?= $r["email"] ?>"><?= $r["email"] ?></a></td>
+                                <td><?= $r["email"] ?></td>
                             </tr>
                             <tr>
                                 <th><i class="material-icons">phone_iphone</i></th>
@@ -64,7 +64,7 @@ $r["reservering"] = new DateTime($r["reservering"]);
                             </tr>
                             <tr>
                                 <th><i class="material-icons">date_range</i></th>
-                                <td><?= $r["reservering"]->format('d F Y') ?> om <?= $r["reservering"]->format('H:i') ?></td>
+                                <td><?= $r["datum"]->format('d F Y') ?>, <b><?= $r["shift"]?></b></td>
                             </tr>
                             <tr>
                                 <th><i class="material-icons">comment</i></th>
@@ -87,6 +87,7 @@ $r["reservering"] = new DateTime($r["reservering"]);
                         ?>
 
                         <button type="submit" name="confirmation" value="mailOk" class="btn green darken-1 right" style="margin-left: 10px">Send mail</button>
+                        <a href="reservering/bekijken/<?= $_GET["id"] ?>" class="btn-flat right">ANNULEREN</a>
 
                         <div style="clear:both"></div>
                     </div>

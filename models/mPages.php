@@ -41,7 +41,7 @@ class mPages
 				
 				$pass = tSecurity::hashPassword($_POST['password'], $user["salt"]);
 
-				if($pass == $user["wachtwoord"]){
+				if($pass == $user["wachtwoord"] && $user["rol"] == 3){
                     $_SESSION["ingelogd"] = true;
                     $_SESSION["gebruiker"] = $user;
 

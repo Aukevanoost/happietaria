@@ -41,6 +41,7 @@ nav{
     background: #fff;
     width: 100%;
     height: 80px;
+    z-index: 9999999999999999999999999999;
     border-bottom: #bbb;
     -webkit-box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.3);
     box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.3);
@@ -128,9 +129,9 @@ nav ul li a:hover {
     background: url('/template/images/wallpaper.jpg') no-repeat center center;
     background-size: cover;
 }
-.mask{
+#login_wallpaper .mask{
     padding-top: 10%;
-width: 100%;
+    width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.3);
 }
@@ -138,5 +139,28 @@ width: 100%;
     box-sizing: border-box;
     width: 400px;
     min-height: 300px;
+    margin: 0px auto;
+}
+
+
+/* ===| RESERVEREN
+=============================================================== */
+#res_wp{
+    width: 100%;
+    height: 100%;
+    background: url('/template/images/wallpaper.jpg') no-repeat center center;
+    background-size: cover;
+}
+#res_wp .mask{
+    padding: 7% 0px;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+}
+#reservationDiv{
+    box-sizing: border-box;
+    width: 800px;
+    min-height: 750px;
     margin: 0px auto;
 }

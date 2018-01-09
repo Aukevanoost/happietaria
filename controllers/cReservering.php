@@ -2,17 +2,36 @@
 
 namespace controllers;
 
+use Core\Controller;
 use models\mReservering;
 
-class cReservering
+class cReservering extends Controller
 {
     public $data;
     private $model;
+    protected $protected_pages = array('index','calendar','statussen', 'delstatus', 'beoordelen','sendmail', 'bekijken', 'accept', 'archive','wijzigen');
 
 
     public function __construct(){
+        parent::__construct();
         $this->model = new mReservering();
-        $_GET["header"] = true;
+    }
+
+
+    public function nieuw(){
+        $_GET["page_title"] = "Nieuwe reservering";
+        $_GET["template"] = "public";
+
+        $this->data["message"] = "";
+        $this->data["verenigingen"] = $this->model->getCommunities();
+        $this->data["shifts"] = $this->model->getShifts();
+
+        if(!empty($_POST)){
+            $this->data["message"] = $this->model->newReservation();
+        }else{
+            $this->data["message"] = "";
+        }
+
     }
 
 
@@ -120,7 +139,7 @@ class cReservering
         $this->data["message"] = "";
 
         if(isset($_POST["JUDGE"])) {
-            $this->data["mail"] = $this->model->getMailData($_POST["JUDGE"], $this->data["reservation"]);
+            $this->data["mail"] = $this->model->getJudgeMailData($_POST["JUDGE"], $this->data["reservation"]);
         }elseif(isset($_POST["confirmation"]) && $_POST["confirmation"] == "mailOk"){
             if(isset($_POST["isAccepted"]) && ($_POST["isAccepted"] == 2 || $_POST["isAccepted"] == 1) ){
                 $this->data["message"] = $this->model->acceptOrRefuseReservation($this->data["reservation"], $_POST["isAccepted"]);
@@ -130,15 +149,26 @@ class cReservering
                 $this->data["message"] = '<div class="chip">Something went terribly wrong, please try again.<i class="close material-icons">close</i></div>';
             }
         }else {
-            $this->data["message"] = "<div class=\"chip\">Whats this? a bug?.<i class=\"close material-icons\">close</i></div>";
+            //$this->data["message"] = "<div class=\"chip\">Whats this? a bug?.<i class=\"close material-icons\">close</i></div>";
+            $this->data["mail"] = $this->model->getMailData($this->data["reservation"]);
         }
 
     }
 
+    public function bekijken(){
+        $_GET["template"] = "private";
+        $_GET["page_title"] = "Reservering bekijken";
+
+
+        //$this->data["status"] = $this->model->getStates();
+        //$this->data["shifts"] = $this->model->getShifts();
+
+        $this->data["reservation"] = $this->model->getFromId($_GET["id"]);
+    }
 
     public function wijzigen(){
         $_GET["template"] = "private";
-        $_GET["page_title"] = "Reservering bekijken";
+        $_GET["page_title"] = "Reservering wijzigen";
 
 
         if(!empty($_POST)){
@@ -149,6 +179,17 @@ class cReservering
 
 
         $this->data["status"] = $this->model->getStates();
+        $this->data["shifts"] = $this->model->getShifts();
+
         $this->data["reservation"] = $this->model->getFromId($_GET["id"]);
+    }
+
+    public function accept(){
+        $cat_id = $this->model->switchAccept($_GET["id"]);
+       // header("location: /reservering/index/".$cat_id);
+    }
+
+    public function archive(){
+        $cat_id = $this->model->setArchived($_GET["id"]);
     }
 }

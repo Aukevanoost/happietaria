@@ -1,6 +1,8 @@
 <?php
     $r =  $this->obj->data["reservation"];
-    $r["reservering"] = new DateTime($r["reservering"]);
+    $r["datum"] = new DateTime($r["datum"]);
+    $r["begin_tijd"] = new DateTime($r["begin_tijd"]);
+    $r["eind_tijd"] = new DateTime($r["eind_tijd"]);
 
 ?>
 <br />
@@ -45,11 +47,11 @@
                         </tr>
                         <tr>
                             <th>Datum:</th>
-                            <td><?= $r["reservering"]->format('d F Y') ?></td>
+                            <td><?= $r["datum"]->format('d F Y') ?></td>
                         </tr>
                         <tr>
                             <th>Tijd:</th>
-                            <td><?= $r["reservering"]->format('H:i') ?></td>
+                            <td><b><?= $r["begin_tijd"]->format('H:i') ?></b> t/m <b><?= $r["eind_tijd"]->format('H:i') ?></b> ( <?= $r["shift"] ?> )</td>
                         </tr>
                         <tr>
                             <th>Opmerking:</th>

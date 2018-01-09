@@ -25,8 +25,9 @@
                     </tr>
                     <?php
                         foreach($this->obj->data["list"] as $status){
-                            if($status["items"] >= 1 || $status["status_id"] == 1){
-                                $state = '<i class="material-icons" aria-hidden="true" title="Deze status bevat '.$status["items"].' reservering(en), Je kunt alleen lege statussen verwijderen">lock</i>';
+                            if($status["items"] >= 1 || $status["locked"] == 1){
+                                $melding = ($status["locked"] == 1) ? "Deze status is beschermd en kan niet verwijderd worden." : 'Deze status bevat '.$status["items"].' reservering(en), Je kunt alleen lege statussen verwijderen' ;
+                                $state = '<i class="material-icons" aria-hidden="true" title="'.$melding.'">lock</i>';
                             }else{
                                 $state = '<a href="/reservering/delstatus/'.$status["status_id"].'" ><i class="material-icons">delete</i></a>';
                             }

@@ -1,0 +1,89 @@
+<br />
+
+<div class="container">
+    <form action="/crew/action" method="post">
+        <div class="card">
+            <div class="card-content">
+                <a href="/crew/index/1" class="<?= ($_GET["id"] == 1) ? "waves-effect light-blue darken-3 waves-light btn" : "waves-effect waves-teal btn-flat" ; ?>"><p style="float: left;">Nieuw</p> </a>
+                <a href="/crew/index/2" class="<?= ($_GET["id"] == 2) ? "waves-effect light-blue darken-3 waves-light btn" : "waves-effect waves-teal btn-flat" ; ?>"><p style="float: left;">Benadert</p> </a>
+                <a href="/crew/index/3" class="<?= ($_GET["id"] == 3) ? "waves-effect light-blue darken-3 waves-light btn" : "waves-effect waves-teal btn-flat" ; ?>"><p style="float: left;">Prullenbak</p> </a>
+
+
+                <?php if($_GET["id"] == 1){ ?>
+                    <button type="submit" name="action" value="delete"  data-position="bottom" data-delay="50" data-tooltip="geselecteerde inschrijvingen verwijderen" class="tooltipped btn-floating right  red darken-3" style="margin-left: 8px;"><i class="material-icons">delete</i></button>
+                    <button type="submit" name="action" value="setSeen" data-position="bottom" data-delay="50" data-tooltip="geselecteerde inschrijvingen op 'benaderd' zetten" class="tooltipped btn-floating right  green darken-2" style="margin-left: 8px;"><i class="material-icons">perm_phone_msg</i></button>
+                <?php }elseif($_GET["id"] == 2){ ?>
+                    <button type="submit" name="action" value="delete"  data-position="bottom" data-delay="50" data-tooltip="geselecteerde inschrijvingen verwijderen" class="tooltipped btn-floating right  red darken-3" style="margin-left: 8px;"><i class="material-icons">delete</i></button>
+                    <button type="submit" name="action" value="setNew" data-position="bottom" data-delay="50" data-tooltip="geselecteerde inschrijvingen op 'nieuw' zetten" class="tooltipped btn-floating right  green darken-2" style="margin-left: 8px;"><i class="material-icons">perm_phone_msg</i></button>
+                <?php }elseif($_GET["id"] == 3){ ?>
+                    <button type="submit" name="action" value="undo"  data-position="bottom" data-delay="50" data-tooltip="geselecteerde inschrijvingen terug zetten" class="tooltipped btn-floating right  red darken-3" style="margin-left: 8px;"><i class="material-icons">undo</i></button>
+                <?php } ?>
+                <br />
+                <br />
+
+                <hr />
+                <br />
+                <br />
+                <input type="text" id="searchBar" class="validate right" style="width: 250px" placeholder="Zoeken" >
+                <h4>Inschrijvingen</h4>
+
+                <table  class="table">
+                    <thead>
+                        <th>#</th>
+                        <th>Naam</th>
+                        <th>Beschikbaar</th>
+                        <th>Telefoon</th>
+                        <th>Benadert</th>
+                        <th></th>
+                    </thead>
+                    <tbody id="targetTable">
+                    <?php
+                    foreach($this->obj->data["registrations"] as $r){
+                        //$chgAcc = "";
+                        switch($r["contact_gehad"]){
+                            case 1: $r["contact_gehad"] = "<b style='color: #0c0'>Ja</b>";   break;
+                            case 0: $r["contact_gehad"] = "<b style='color: #c00'>Nee</b>";  break;
+                        }
+
+
+                        //$r["datum"] = new DateTime($r["datum"]);
+                        echo '<tr>';
+                            echo '<td>';
+                                echo '<div class="col s6"><p style="line-height: 0px; margin: 0px; padding: 0px;">';
+                                    echo'<input type="checkbox" name="registrations[]" value="'.$r["inschrijving_id"].'" id="reg_'.$r["inschrijving_id"].'" />';
+                                    echo '<label for="reg_'.$r["inschrijving_id"].'"></label><br /><br />';
+                                echo '</p></div>';
+                            echo '</td>';
+                            echo '<td>'.$r["voornaam"].' '.$r["achternaam"].'</a></td>';
+                            echo '<td>'.$r["beschikbaar"].'</td>';
+                            echo '<td>'.$r["telefoon"].'</td>';
+                            echo '<td>'.$r["contact_gehad"].'</td>';
+
+                            echo '<td style="text-align: right; min-width: 80px !Important">';
+                                echo 'No actions yet';
+                            //if($geaccepteerd) {
+                                // echo '<a href="reservering/bekijken/' . $r["reservering_id"] . '">Bekijken</a> | ';
+                                //echo '<a href="/reservering/index">Beantwoorden</a>';
+                            //   echo '<a href="/reservering/bekijken/' . $r["reservering_id"] . '">Details</a> ';
+                            //    echo $chgAcc;
+                            //    if($_GET["id"] != 4){echo '| <a href="/reservering/archive/' . $r["reservering_id"] . '">Archiveren</a>';}
+                            //}else{
+                            //    echo '<a class="btn green darken-1" href="/reservering/beoordelen/' . $r["reservering_id"] . '">beoordelen</a>';
+                            //}
+                            echo '</td>';
+                        echo '<tr>';
+                    }
+                    if($this->obj->data["registrations"] == null){
+                        echo '<tr><td><b style="color: #999">#0</b></td><td colspan="3"><i style="color: #999; font-weight: bold;">No records found</i></td></tr>';
+                    }
+
+                    ?>
+
+                    </tbody>
+                </table>
+                <br /><br />
+                <br /><br />
+            </div>
+        </div>
+    </form>
+</div>
