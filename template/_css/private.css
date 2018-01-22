@@ -24,3 +24,7 @@ body{
     border: 2px solid #01579b ;
     float: left;
 }
+
+th {
+    vertical-align: top !important;
+}

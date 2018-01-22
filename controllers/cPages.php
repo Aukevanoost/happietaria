@@ -9,14 +9,14 @@ class cPages extends Controller
 {
     protected $protected_pages = array('dashboard','uitloggen');
     private $model;
-    private $data;
+    public $data;
+
 
     public function __construct(){
         parent::__construct();
         $this->model = new mPages();
     }
-
-
+    
 
     public function home(){
         $_GET["page_title"] = "Homepage";
@@ -34,7 +34,7 @@ class cPages extends Controller
     public function project(){
         $_GET["page_title"] = "project";
         $_GET["template"] = "public";
-        $this->data = array();
+        $this->Data["message"] = "Er is nog geen bericht";
     }
 
     public function sponsoring(){

@@ -22,6 +22,7 @@ abstract class Controller
         // Default properties
         $_GET["header"] = false;
         $_GET["template"] = "public";
+        $this->Data = array();
 
         // check protected pages
         if(!isset($this->protected_pages))
@@ -31,6 +32,8 @@ abstract class Controller
         $_GET["header"] = true;
 
         // veiligheidscheck
-        tSecurity::checkSignedIn($_GET["method"],$this->protected_pages, $_SESSION);
+        if(!empty($_GET["method"])){
+            tSecurity::checkSignedIn($_GET["method"],$this->protected_pages, $_SESSION);
+        }
     }
 }

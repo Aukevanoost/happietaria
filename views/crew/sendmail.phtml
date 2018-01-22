@@ -1,0 +1,98 @@
+<?php
+$r =  $this->obj->data["reservation"];
+$m =  $this->obj->data["mail"];
+$r["datum"] = new DateTime($r["datum"]);
+
+?>
+<br />
+<div class="container">
+    <form action="" method="post">
+        <div class="row">
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <a href="/pages/dashboard">Overzicht</a> > <a href="/reservering/index">Reserveringen</a> > <a href="/reservering/bekijken/<?= $_GET["id"]?>">Reservering</a> > Klant mailen
+                    </div>
+                </div>
+            </div>
+            <div class="col s8">
+                <div class="card" style="min-height: 550px">
+                    <div class="card-content">
+
+                        <h3> Stuur de klant een mail!</h3>
+                        <?= $this->obj->data["message"]; ?>
+
+                        <br />
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input style="background: #efefef; border-top: 1px solid #999; padding-left: 15px" placeholder="Typ hier het onderwerp van de mail" value="<?=  $m["subject"] ?>" type="text" id="onderwerp" name="onderwerp" class="validate">
+                                <label for="onderwerp">ONDERWERP</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <textarea style="min-height: 290px; background: #efefef; border-top: 1px solid #999; box-sizing: border-box; padding: 15px;" id="message" name="inhoud" class="materialize-textarea"><?= $m["message"];  ?></textarea>
+                                <label for="message">INHOUD VAN DE MAIL</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="card"  style="height: 550px">
+                    <div class="card-content">
+                        <h3>Reservering</h3>
+                        <br />
+                        <table class="table bordered">
+                            <tr>
+                                <th><i class="material-icons">account_circle</i></th>
+                                <td><?= $r["voornaam"] . ' ' . $r["achternaam"] ?></td>
+                            </tr>
+                            <tr>
+                                <th><i class="material-icons">mail</i></th>
+                                <td><?= $r["email"] ?></td>
+                            </tr>
+                            <tr>
+                                <th><i class="material-icons">phone_iphone</i></th>
+                                <td><?= $r["telefoon"] ?></td>
+                            </tr>
+                            <tr>
+                                <th><i class="material-icons">people</i></th>
+                                <td><b><?= $r["personen"] ?></b> personen</td>
+                            </tr>
+                            <tr>
+                                <th><i class="material-icons">date_range</i></th>
+                                <td><?= $r["datum"]->format('d F Y') ?>, <b><?= $r["shift"]?></b></td>
+                            </tr>
+                            <tr>
+                                <th><i class="material-icons">comment</i></th>
+                                <td><i><?= $r["opmerking"] ?></i></td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <?php
+                        if(isset($_POST["JUDGE"])) {
+                            $acc = ($_POST["JUDGE"] == "ACCEPT") ? 1 : 2 ;
+                            echo '<input type="hidden" name="isAccepted" value="'.$acc.'"/>';
+                        }
+
+                        ?>
+
+                        <button type="submit" name="confirmation" value="mailOk" class="btn green darken-1 right" style="margin-left: 10px">Send mail</button>
+                        <a href="reservering/bekijken/<?= $_GET["id"] ?>" class="btn-flat right">ANNULEREN</a>
+
+                        <div style="clear:both"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

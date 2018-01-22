@@ -41,6 +41,31 @@ class mCrew
 
 
 
+
+
+    /*
+    *  ======| GET FROM ID |==================================
+    *  Get full ticket information based on a ticket id
+    */
+    public function getFromId($inschrijving){
+        $data = array();
+        $qry = "
+			SELECT i.*, g.*, v.naam as vereniging           
+			FROM inschrijving i                
+			LEFT JOIN gebruiker g ON g.gebruiker_id = i.gebruiker_id                
+			LEFT JOIN vereniging v ON v.vereniging_id = g.vereniging_id
+			WHERE inschrijving_id = ".$inschrijving;
+
+        $stmt = $this->Conn->prepare($qry);
+
+        if($stmt->execute()){
+            $data = $stmt->fetchAll();
+        }
+
+        return $data[0];
+    }
+
+
     /*
     *  ======| GET ALL SKILLS |==================================
     *  Haalt alle categoriën met het aantal reserveringen dat erin zit
@@ -61,7 +86,34 @@ class mCrew
 
 
     /*
-    *  ======| GET ALL SKILLS |==================================
+    *  ======| GET CHOSEN SKILLS |==================================
+    *  Haalt alle categoriën op die gekozen zijn
+    */
+        public function getChosenSkills($inschrijving){
+            $data = array();
+
+            $qry = "
+                SELECT * 
+                FROM vaardigheden v
+                LEFT JOIN inschrijving_vaardigheden iv ON v.skill_id = iv.skill_id
+                WHERE iv.inschrijving_id = ".$inschrijving;
+
+            $stmt = $this->Conn->prepare($qry);
+
+
+            if($stmt->execute()){
+                while($row = $stmt->fetch()){
+                    array_push($data, $row);
+                }
+            }
+            return $data;
+        }
+
+
+
+
+    /*
+    *  ======| ADD CREW MEMBER |==================================
     *  Haalt alle categoriën met het aantal reserveringen dat erin zit
     */
     public function newCrewMember(){
@@ -126,7 +178,7 @@ class mCrew
             }
 
 
-            return "Reservering was succesvol toegevoegd";
+            return "Bedankt voor je bijdrage! we gaan er zsm naar kijken.";
         }catch (Exception $ex){
             return "Reservering aanvragen mislukt, probeer het later opnieuw.";
         }
@@ -159,10 +211,7 @@ class mCrew
 
 
     public function chgRegistration(){
-        //echo '<pre>';
-        //var_dump($_POST);
-        //echo '</pre>';
-        //die();
+
         if(isset($_POST["action"])){
             //foreach($_POST["registrations"] as $r){
             $ids = join("','",$_POST["registrations"]);

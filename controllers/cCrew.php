@@ -39,7 +39,6 @@ class cCrew extends Controller
 
 
     public function index(){
-
         $_GET["page_title"] = "Inschrijvingen";
         $_GET["template"] = "private";
 
@@ -53,9 +52,16 @@ class cCrew extends Controller
         // get reservations
         $_GET["id"] = ($_GET["id"] == "") ? 1 : $_GET["id"];
         $this->data["registrations"] = $this->model->getRegistrations($_GET["id"]);
-
-
     }
+
+    public function bekijken(){
+        $_GET["page_title"] = "Vrijwilliger details";
+        $_GET["template"] = "private";
+
+        $this->data["inschrijving"] = $this->model->getFromId($_GET["id"]);
+        $this->data["skills"] = $this->model->getChosenSkills($_GET["id"]);
+    }
+
 
     public function action(){
         $this->model->chgRegistration($_GET["id"]);
