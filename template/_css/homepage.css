@@ -17,6 +17,15 @@ h2 .material-icons{
     padding: 4px;
 }
 
+h3 .material-icons{
+    font-size:50px !important;
+    color: #fff;
+    display: block;
+    float: left;
+    padding-right: 7px;
+    margin-top: -2px;
+}
+
 #nav {
     list-style-type: none;
     margin: 0;
@@ -41,6 +50,10 @@ h2 .material-icons{
 #nav li a:hover {
     opacity: 1;
     border-bottom: 1px solid #ff9818;
+}
+
+#nav li a:focus {
+    outline: none !important;
 }
 
 #mission {
@@ -77,9 +90,15 @@ h2 .material-icons{
     position: absolute;
     margin-left: 10px;
     line-height: 50px;
-    font-style: italic;
     font-weight: bold;
     color: #143460;
+}
+
+#gauger_paragraph {
+    margin: 40px 15%;
+    width: 70%;
+    text-align: center;
+    font-size: 18px;
 }
 
 .sponsor{
@@ -112,4 +131,26 @@ h2 .material-icons{
     float: right;
     background-color: #fff !important;
     color: #1976D2;
+}
+
+footer {
+    background-color: #ff9818;
+    min-height: 350px;
+    color: #fff !important;
+}
+
+.footer_item h3 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 4px;
+
+}
+
+footer div ul {
+    list-style-type: none;
+}
+
+footer div img {
+    float: left;
+    width: 35px;
+    padding-right: 5px;
 }
