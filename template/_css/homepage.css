@@ -4,16 +4,24 @@ body {
 }
 
 header {
-    background: url('/template/images/frontImg.png') no-repeat center center;
+    background: url('/template/images/frontImg_v2.png') no-repeat center center;
     background-size: cover;
     width: 100%;
     height: 100%;
+}
+
+h2 .material-icons{
+    font-size:32px !important;
+    color: #fff;
+    background: #143460;
+    padding: 4px;
 }
 
 #nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    margin-left: 40px;
 }
 
 #nav li {
@@ -24,7 +32,7 @@ header {
     display: block;
     color: #fff;
     opacity: 0.8;
-    padding: 20px 10px;
+    padding: 30px 10px 15px 10px;
     text-decoration: none;
     font-weight: bold;
     transition: .2s;
@@ -36,16 +44,16 @@ header {
 }
 
 #mission {
-    padding-top: 80px;
+    padding: 150px 0px;
     background-color: #eee;
 }
 
 .parallax-container {
-    height: 700px;
+    height: auto;
 }
 #gauger_card {
     height: 450px;
-    margin-top: 80px;
+    margin: 150px 0px;
 }
 
 #gauger_side_img {
@@ -72,4 +80,36 @@ header {
     font-style: italic;
     font-weight: bold;
     color: #143460;
+}
+
+.sponsor{
+    width: 25%;
+    box-sizing: border-box;
+    padding: 25px 15px;
+}
+
+#rightSection{
+    position: absolute;
+    bottom: 50px;
+    float: right;
+    right: 50px;
+    text-align: right;
+    padding-top: 150px;
+}
+
+.homepage_btn{
+    width: 250px !important;
+    margin: 10px;
+    display: block;
+    float: right;
+    background-color: #1976D2 !important;
+    color: #fff;
+}
+.homepage_btn_inverse{
+    width: 250px !important;
+    margin: 10px;
+    display: block;
+    float: right;
+    background-color: #fff !important;
+    color: #1976D2;
 }
