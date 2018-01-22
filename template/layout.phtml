@@ -28,12 +28,13 @@
 
 
         <!-- eigen stylesheets -->
-        <?php echo ($_GET["template"] == "private") ? '<link href="/template/_css/private.css" rel="stylesheet" />'  : '<link href="template/_css/public.css" rel="stylesheet" />'; ?>
+        <?= '<link href="/template/_css/'.$_GET["template"].'.css" rel="stylesheet" />'; ?>
+
     </head>
     <body style="background: #eee">
             <?php
                 // Head
-                if($_GET["header"]) {
+                if($_GET["page_header"]) {
                     include('template/headers/'.$_GET["template"].'.phtml');
                 }
 

@@ -29,7 +29,7 @@ abstract class Controller
             throw new LogicException(get_class($this) . ' needs a "protected pages" array');
 
         // otherwise the errors are not visible
-        $_GET["header"] = true;
+        $_GET["page_header"] = true;
 
         // veiligheidscheck
         if(!empty($_GET["method"])){

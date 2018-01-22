@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: url('/template/images/frontImg.png') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav li {
+    float: left;
+}
+
+#nav li a {
+    display: block;
+    color: #fff;
+    opacity: 0.8;
+    padding: 20px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .2s;
+}
+
+#nav li a:hover {
+    opacity: 1;
+    border-bottom: 1px solid #ff9818;
+}
+
+#mission {
+    padding-top: 80px;
+    background-color: #eee;
+}
+
+.parallax-container {
+    height: 700px;
+}
+#gauger_card {
+    height: 450px;
+    margin-top: 80px;
+}
+
+#gauger_side_img {
+    background: url('/template/images/moneyImg.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100%;
+}
+
+#gauger_container {
+    width: 100%;
+    height: 50px;
+}
+
+#gauger_volume {
+    background-color: #ff9818;
+    height: 100%;
+    width: 0%;
+}
+
+#gauger_label {
+    position: absolute;
+    margin-left: 10px;
+    line-height: 50px;
+    font-style: italic;
+    font-weight: bold;
+    color: #143460;
+}

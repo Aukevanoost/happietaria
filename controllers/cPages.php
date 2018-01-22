@@ -20,9 +20,10 @@ class cPages extends Controller
 
     public function home(){
         $_GET["page_title"] = "Homepage";
-        $_GET["template"] = "public";
+        $_GET["template"] = "homepage";
 		
         $this->data = array();
+        $_GET["page_header"] = false;
     }
 
     public function onsdoel(){

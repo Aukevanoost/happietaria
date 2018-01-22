@@ -1,17 +1,74 @@
-<div id="container">
-    <iframe id="video" src="https://www.youtube.com/embed/FM7MFYoylVs" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-    <section id="jumbotron">
-
-    </section>
-    <div id="info">
-        <div id="infoid_1">
-
+<header>
+    <div class="container">
+        <ul id="nav">
+            <li><a href="/reservering/nieuw">RESERVEREN</a></li>
+            <li><a href="/crew/nieuw">MEEHELPEN</a></li>
+            <li><a href="#">PROJECT</a></li>
+            <li><a href="#">DONEREN</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </div>
+</header>
+<section id="mission">
+    <div class="row container">
+        <div class="col s6">
+            <h2>
+                <i class="medium material-icons">flag</i> Onze missie
+            </h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+            </p>
+            <br>
+            <a class="waves-effect waves-light btn-large blue darken-2" href="/crew/nieuw">Ook vrijwilliger worden?</a>
         </div>
-        <div id="infoid_2">
-            <p>Dit is een paragraaf die informatie zou moeten verschaffen over happietaria</p>
-        </div>
-        <div id="infoid_3">
-
+        <div class="col s6">
+            <img id="missionimg" src="/template/images/missionImg_v2.jpg" width="100%">
         </div>
     </div>
-</div>
+</section>
+<section>
+    <div class="parallax-container">
+        <div class="parallax"><img src="/template/images/paralaxImg.png"></div>
+        <div class="container">
+            <div id="gauger_card" class="card row">
+                <div class="col s9">
+                    <div class="card-content">
+                        <h2>
+                            <i class="medium material-icons">euro_symbol</i> Hoe ver zijn we?
+                        </h2>
+                        <div id="gauger_container" class="z-depth-4">
+                            <p id="gauger_label">0/0</p>
+                            <div id="gauger_volume"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="gauger_side_img" class="col s3">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h2>
+            <i class="medium material-icons">people</i> Sponsoren
+        </h2>
+
+    </div>
+</section>
+<footer>
+
+</footer>
+<script>
+    $(document).ready(function(){
+        $('.parallax').parallax();
+    });
+
+    $(function(){
+        var goal = 12000;
+        var current = 8500;
+        var perc = (current / goal) * 100;
+       $("#gauger_volume").css("width",perc+ "%");
+       $("#gauger_label").html(current + " / " + goal + " &euro;");
+    });
+</script>
