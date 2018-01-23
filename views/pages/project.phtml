@@ -1,16 +1,102 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Wouter
- * Date: 26-12-2017
- * Time: 20:06
- */
-?>
+<header id="projectinfo">
+    <ul id="nav">
+        <li><a href="/reservering/nieuw">RESERVEREN</a></li>
+        <li><a href="/crew/nieuw">MEEHELPEN</a></li>
+        <li><a href="pages/project">PROJECT</a></li>
+        <li><a href="#">SPONSOREN</a></li>
+        <li><a href="#">CONTACT</a></li>
+    </ul>
+    <div id="rightSection">
+        <ul id="rightButtons">
+            <li><a class="waves-effect waves-light btn-large homepage_btn_inverse" href="/crew/nieuw">WORDT VRIJWILLIGER!</a></li>
+            <li><a class="waves-effect waves-light btn-large homepage_btn" href="/crew/nieuw">SPONSOR!</a></li>
+        </ul>
+    </div>
+    <div id="information" class="container">
+        <div id="information_card" class="card">
+            <div class="card-content">
+                <h2>
+                    <i class="medium material-icons z-depth-3">info</i> Project information
+                </h2>
+                <br>
+                <p id="information_paragraph">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+                </p>
+            </div>
 
-<div>
-<<<<<<< HEAD
+        </div>
+    </div>
+</header>
+<section>
+    <div class="parallax-container">
+        <div class="parallax"><img src="/template/images/etenImg_v2.jpeg" style="height: 130%; width: 101%;"></div>
+        <div class="container">
+            <div id="gauger_card" class="card row">
+                <div class="col s9">
+                    <div class="card-content">
+                        <h2>
+                            <i class="medium material-icons z-depth-3">euro_symbol</i> Hoe ver zijn we?
+                        </h2>
+                        <div id="gauger_container" class="z-depth-4">
+                            <p id="gauger_label">0/0</p>
+                            <div id="gauger_volume"></div>
+                        </div>
+                        <div>
+                            <p id="gauger_paragraph">
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                    <div id="gauger_side_img" class="col s3">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container row">
+        <div class="col s3 footer_item">
+            <h3>
+                <i class="material-icons">home</i> Over
+            </h3>
+            <p style="font-style: italic;">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+            </p>
+        </div>
+        <div class="col s3 footer_item">
+            <h3>
+                <i class="material-icons">mail</i> Contact
+            </h3>
+            <ul>
+                <li>Schippersweg 32</li>
+                <li>8080 ZZ, Zwolle</li>
+                <li>Nederland</li>
+                <li>tel: 06 32 43 45 65</li>
+                <li>info@happietaria-zwolle.nl</li>
+            </ul>
+            <img src="/template/images/icons/facebook.png">
+            <img src="/template/images/icons/twitter.png">
+            <img src="/template/images/icons/youtube.png">
+        </div>
+        <div class="col s6 footer_item">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13739.52878031237!2d6.073162260864796!3d52.50034408968292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7ded4e818a589%3A0x68b47bb437213d3b!2sHogeschool+Windesheim!5e0!3m2!1snl!2snl!4v1516630713167" width="100%" height="250" frameborder="0" style="border:0; padding-top: 25px;"></iframe>
+        </div>
+    </div>
+</footer>
+<script>
+    $(document).ready(function(){
+        $('.parallax').parallax();
+    });
 
-=======
-    <?= $this->Data["message"] ?>
->>>>>>> 42ea1c0bcb65c118816c863aa522a41e33a7ee77
-</div>
+    $(function(){
+        var goal = 12000;
+        var current = 8500;
+        var perc = (current / goal) * 100;
+        $("#gauger_volume").css("width",perc+ "%");
+        current = Number(current).toLocaleString('nl');
+        goal = Number(goal).toLocaleString('nl');
+
+        $("#gauger_label").html(current + " / " + goal + " &euro;");
+    });
+</script>
