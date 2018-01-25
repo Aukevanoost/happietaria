@@ -6,11 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a12dcfad-2bc8-41e6-a1c2-8d355c079e4d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/images/frontImgMobile.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/happietaria.iml" afterPath="$PROJECT_DIR$/.idea/happietaria.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/images/full_wp.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/images/icons/icon_happietaria.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/_css/homepage.css" afterPath="$PROJECT_DIR$/template/_css/homepage.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/home.phtml" afterPath="$PROJECT_DIR$/views/pages/home.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/_css/public.css" afterPath="$PROJECT_DIR$/template/_css/public.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/headers/public.phtml" afterPath="$PROJECT_DIR$/template/headers/public.phtml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,21 +25,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="homepage.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homepage.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/_css/homepage.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="807">
-              <caret line="257" column="0" lean-forward="true" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
+            <state relative-caret-position="304">
+              <caret line="115" column="29" lean-forward="false" selection-start-line="115" selection-start-column="23" selection-end-line="115" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.phtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/pages/home.phtml">
+      <file leaf-file-name="public.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/template/_css/public.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+            <state relative-caret-position="331">
+              <caret line="147" column="49" lean-forward="false" selection-start-line="147" selection-start-column="49" selection-end-line="147" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="public.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/headers/public.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -50,6 +60,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>header</find>
+      <find>gauger</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -78,6 +89,8 @@
         <option value="$PROJECT_DIR$/views/crew/sendmail.phtml" />
         <option value="$PROJECT_DIR$/views/pages/home.phtml" />
         <option value="$PROJECT_DIR$/template/_css/homepage.css" />
+        <option value="$PROJECT_DIR$/template/headers/public.phtml" />
+        <option value="$PROJECT_DIR$/template/_css/public.css" />
       </list>
     </option>
   </component>
@@ -179,6 +192,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="headers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="htdocs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="htdocs" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="core" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -207,11 +238,12 @@
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\template\images" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\template\images" />
+      <recent name="C:\xampp\htdocs\template\images\icons" />
     </key>
   </component>
   <component name="RunManager">
@@ -295,12 +327,12 @@
       <workItem from="1516389878261" duration="1263000" />
       <workItem from="1516622458129" duration="5776000" />
       <workItem from="1516786158295" duration="3167000" />
-      <workItem from="1516875660292" duration="2172000" />
+      <workItem from="1516875660292" duration="2876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49483000" />
+    <option name="totallyTimeSpent" value="50187000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-214" width="1936" height="1056" extended-state="6" />
@@ -337,16 +369,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="26" column="40" lean-forward="false" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="40" />
-          <folding>
-            <element signature="e#104#124#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/tSecurity.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
@@ -387,6 +409,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="57" lean-forward="false" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -461,6 +484,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="57" lean-forward="false" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -550,13 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1411">
           <caret line="83" column="3" lean-forward="false" selection-start-line="83" selection-start-column="3" selection-end-line="83" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/headers/public.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -705,6 +722,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="124" lean-forward="false" selection-start-line="7" selection-start-column="124" selection-end-line="7" selection-end-column="124" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -732,8 +750,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/template/_css/homepage.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="257" column="0" lean-forward="true" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
+        <state relative-caret-position="304">
+          <caret line="115" column="29" lean-forward="false" selection-start-line="115" selection-start-column="23" selection-end-line="115" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/headers/public.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/_css/public.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="147" column="49" lean-forward="false" selection-start-line="147" selection-start-column="49" selection-end-line="147" selection-end-column="49" />
           <folding />
         </state>
       </provider>

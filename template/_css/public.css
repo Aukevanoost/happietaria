@@ -11,7 +11,7 @@
 html,
 body{
     margin: 0px;
-    padding-top: 80px;
+    /*margin-top: 80px;*/
     overflow-x: hidden;
     width: 100%;
     height: 100%;
@@ -38,7 +38,7 @@ nav{
     position: fixed;
     left: 0px;
     top: 0px;
-    background: #fff;
+    background: #ff9818;
     width: 100%;
     height: 80px;
     z-index: 9999999999999999999999999999;
@@ -47,11 +47,8 @@ nav{
     box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.3);
 }
 #brand{
-    line-height: 80px;
-    font-size: 36px;
-    color: #0000CC;
-    font-weight: bold;
-    padding: 0px 40px 0px 20px;
+    margin: 10px 40px 10px 20px;
+    height: 60px;
     float: left;
 }
 
@@ -73,7 +70,7 @@ nav ul li {
 
 nav ul li a {
     display: block;
-    color: #444;
+    color: #fff;
     text-align: center;
     padding: 0px 16px;
     font-size: 18px;
@@ -126,7 +123,7 @@ nav ul li a:hover {
 #login_wallpaper{
     width: 100%;
     height: 100%;
-    background: url('/template/images/wallpaper.jpg') no-repeat center center;
+    background: url('/template/images/full_wp.png') no-repeat center center;
     background-size: cover;
 }
 #login_wallpaper .mask{
@@ -148,7 +145,7 @@ nav ul li a:hover {
 #res_wp{
     width: 100%;
     height: 100%;
-    background: url('/template/images/wallpaper.jpg') no-repeat center center;
+    background: url('/template/images/full_wp.png') no-repeat center center;
     background-size: cover;
 }
 #res_wp .mask{
