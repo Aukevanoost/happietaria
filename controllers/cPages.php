@@ -12,11 +12,13 @@ class cPages extends Controller
     public $data;
 
 
+
     public function __construct(){
         parent::__construct();
         $this->model = new mPages();
     }
     
+
 
     public function home(){
         $_GET["page_title"] = "Homepage";
@@ -26,6 +28,8 @@ class cPages extends Controller
         $_GET["page_header"] = false;
     }
 
+
+
     public function project(){
         $_GET["page_title"] = "project";
         $_GET["template"] = "project";
@@ -33,11 +37,15 @@ class cPages extends Controller
         $_GET["page_header"] = false;
     }
 
+
+
     public function sponsoring(){
         $_GET["page_title"] = "sponsoring";
         $_GET["template"] = "public";
         $this->data = array();
     }
+
+
 
     public function inloggen(){
         $_GET["page_title"] = "Inloggen";
@@ -55,6 +63,8 @@ class cPages extends Controller
         }
     }
 
+
+
     public function dashboard(){
         if(!isset($_SESSION['ingelogd']) || empty($_SESSION['ingelogd'])) {
             header("location: /pages/inloggen");
@@ -64,8 +74,18 @@ class cPages extends Controller
         $_GET["page_title"] = "Dashboard";
     }
 
+
+
     public function uitloggen(){
         $_GET["page_title"] = "Sign out";
         $this->data = $this->model->signOut();
+    }
+
+
+
+
+    public function contact(){
+        $_GET["page_title"] = "Contact";
+
     }
 }

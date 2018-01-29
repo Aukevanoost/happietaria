@@ -93,6 +93,12 @@ h3 .material-icons{
     background-color: #eee;
 }
 
+#mission p{
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
 .parallax-container {
     height: auto;
 }

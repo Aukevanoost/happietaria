@@ -35,9 +35,7 @@ h3 .material-icons{
     margin-left: 40px;
 }
 
-#nav li {
-    float: left;
-}
+
 
 #nav li a {
     display: block;
@@ -49,7 +47,7 @@ h3 .material-icons{
     transition: .2s;
 }
 
-#nav li a:hover {
+nav li a:hover {
     opacity: 1;
     border-bottom: 1px solid #ff9818;
 }
