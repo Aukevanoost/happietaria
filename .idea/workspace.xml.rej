@@ -1,0 +1,12 @@
+diff a/.idea/workspace.xml b/.idea/workspace.xml	(rejected hunks)
+@@ -21,8 +21,8 @@
+       <file leaf-file-name="homepage.css" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/template/_css/homepage.css">
+           <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="465">
+-              <caret line="133" column="1" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="133" selection-end-column="1" />
++            <state relative-caret-position="2261">
++              <caret line="133" column="1" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="133" selection-end-column="1" />
+               <folding />
+             </state>
+           </provider>
