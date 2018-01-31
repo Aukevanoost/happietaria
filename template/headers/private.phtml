@@ -4,19 +4,20 @@
             <div class="nav-wrapper">
                 <a href="/pages/dashboard" class="brand-logo"><i class="material-icons">&nbsp; restaurant&nbsp;</i> Happietaria</a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/pages/dashboard">Mijn profiel</a></li>
-                    <li><a href="/pages/uitloggen">Uitloggen</a></li>
+                    <!--<li><a href="/pages/dashboard">Mijn profiel</a></li>-->
+                    <li><a href="/pages/uitloggen"><i class="material-icons left">power_settings_new</i>UITLOGGEN</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
-                    <li><a href="/pages/dashboard">Mijn profiel</a></li>
+                    <!--<li><a href="/pages/dashboard">Mijn profiel</a></li>-->
                     <li><a href="/pages/uitloggen">Uitloggen</a></li>
                 </ul>
             </div>
             <div class="nav-content">
                 <ul>
+                    <li class="customItem <?php if($_GET["controller"] == "pages"){echo 'active';} ?>"><a href="/pages/dashboard">Dashboard</a></li>
                     <li class="customItem <?php if($_GET["controller"] == "reservering"){echo 'active';} ?>"><a href="/reservering/index">Reserveringen</a></li>
                     <li class="customItem <?php if($_GET["controller"] == "crew"){echo 'active';} ?>"><a href="/crew/index/1">Vrijwilligers</a></li>
-                    <li class="customItem <?php if($_GET["controller"] == "manager"){echo 'active';} ?>"><a href="/crew/index/1">Vrijwilligersformulier beheren</a></li>
+                    <!--<li class="customItem <?php if($_GET["controller"] == "manager"){echo 'active';} ?>"><a href="/crew/index/1">Vrijwilligersformulier beheren</a></li>-->
                 </ul>
             </div>
         </nav>
