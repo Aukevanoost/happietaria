@@ -229,4 +229,44 @@ class mCrew
         }
         header('location: /crew/index/'.$hdr);
     }
+
+
+
+
+    public function getMailData($r){
+        $data = array();
+
+
+        // Mail voorbereiden
+
+
+        // subject
+        $data["subject"] = "Betreft: uw inschrijving als vrijwilliger - Happietaria Zwolle";
+
+
+        // uiteindelijke bericht
+        $data["message"] = "Geachte heer/mevr ".$r["achternaam"]."\n\n
+We hebben besloten dat jij een perfecte toevoeging bent aan ons happietaria team!
+
+
+Voor meer vragen/opmerkingen kunt u altijd contact met ons opnemen via het contactformulier.\n\n
+Met vriendelijke groet, \n
+Het Zwolse Happietaria Team.
+        ";
+
+        return $data;
+    }
+
+    public function sendCreatedMail($inschrijving){
+        $onderwerp = filter_var($_POST["onderwerp"],FILTER_SANITIZE_STRING);
+        $inhoud = filter_var($_POST["inhoud"],FILTER_SANITIZE_STRING);
+
+
+        tMailing::sendAcceptRefuseMail($inschrijving["email"], $onderwerp, $inhoud);
+
+
+        return '<div class="chip">Mail is verstuurd<i class="close material-icons">close</i></div>';
+
+        header("locattion: /inschrijving/index");
+    }
 }

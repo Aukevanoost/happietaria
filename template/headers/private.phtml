@@ -1,18 +1,32 @@
-<br />
-<div class="container">
-    <nav class=" light-blue darken-3">
-        <div class="nav-wrapper ">
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li <?php if($_GET["controller"] == "pages"){echo 'class="active"';} ?>><a href="/pages/dashboard"><i class="material-icons">&nbsp; restaurant&nbsp;</i></a></li>
-                <li <?php if($_GET["controller"] == "reservering"){echo 'class="active"';} ?>><a href="/reservering/index">Reserveringen</a></li>
-                <li <?php if($_GET["controller"] == "crew"){echo 'class="active"';} ?>><a href="/crew/index/1">Vrijwilligers</a></li>
-                <li><a href="">Nieuws</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="/pages/dashboard"><i class="material-icons">account_circle</i></a></li>
-                <li><a href="/pages/uitloggen"><i class="material-icons">keyboard_tab</i></a></li>
-            </ul>
-        </div>
-    </nav>
+<header>
+    <div class="container">
+        <nav class="nav-extended">
+            <div class="nav-wrapper">
+                <a href="/pages/dashboard" class="brand-logo"><i class="material-icons">&nbsp; restaurant&nbsp;</i> Happietaria</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/pages/dashboard">Mijn profiel</a></li>
+                    <li><a href="/pages/uitloggen">Uitloggen</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="/pages/dashboard">Mijn profiel</a></li>
+                    <li><a href="/pages/uitloggen">Uitloggen</a></li>
+                </ul>
+            </div>
+            <div class="nav-content">
+                <ul>
+                    <li class="customItem <?php if($_GET["controller"] == "reservering"){echo 'active';} ?>"><a href="/reservering/index">Reserveringen</a></li>
+                    <li class="customItem <?php if($_GET["controller"] == "crew"){echo 'active';} ?>"><a href="/crew/index/1">Vrijwilligers</a></li>
+                    <li class="customItem <?php if($_GET["controller"] == "manager"){echo 'active';} ?>"><a href="/crew/index/1">Vrijwilligersformulier beheren</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+    </div>
+</header>
+<div id="pagetitle">
+    <div class="container">
+        <h3><?= $_GET['page_title'] ?></h3>
+    </div>
+
 </div>
