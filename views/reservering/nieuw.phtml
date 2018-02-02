@@ -1,94 +1,142 @@
 <div id="res_wp">
     <div class="mask">
+        <div class="container">
+            <div class="row">
+                <div class="col s8">
+                    <div class="card" id="reservationDiv">
+                        <form method="post" action="">
+                            <h4 style="text-align: center; padding-top: 15px;">Nieuwe reservering</h4>
 
-        <div class="card" id="reservationDiv">
-            <form method="post" action="">
+                            <div class="card-content">
+                                <?php if(!empty($this->obj->data["message"])){ ?>
+                                    <div class="chip">
+                                        <?php $icon = ($this->obj->data["message"] == "Reservering was succesvol toegevoegd") ?  "success" : "exclamation_mark" ; ?>
+                                        <img src="/template/images/<?= $icon ?>.png" alt="Form not filled in correctly">
+                                        <?= $this->obj->data["message"] ?>
+                                        <i class="close material-icons">close</i>
+                                    </div>
+                                <?php } ?>
+                                <h5>Persoonlijke gegevens</h5>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="icon_prefix" name="voornaam" type="text" class="validate" maxlength="20" data-length="20" required value="<?php if(isset($_POST["voornaam"])){echo $_POST["voornaam"];} ?>">
+                                        <label for="icon_prefix">Voornaam</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input id="icon_prefix" name="achternaam" type="text" class="validate" maxlength="40" data-length="40" required value="<?php if(isset($_POST["achternaam"])){echo $_POST["achternaam"];} ?>">
+                                        <label for="icon_prefix">Achternaam</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">email</i>
+                                        <input id="text" type="email" name="email" class="validate" maxlength="50" data-length="50"  required value="<?php if(isset($_POST["email"])){echo $_POST["email"];} ?>">
+                                        <label for="icon_telephone">Email adres</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">phone_iphone</i>
+                                        <input id="text" type="text" name="telefoon" maxlength="15" data-length="15"  class="validate" value="<?php if(isset($_POST["telefoon"])){echo $_POST["telefoon"];} ?>">
+                                        <label for="icon_telephone">Telefoon nummer (optioneel)</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">flag</i>
+                                        <select class="form-control" name="vereniging">
+                                            <?php
+                                            foreach($this->obj->data["verenigingen"] as $v){
+                                                $selected = ($v["vereniging_id"] == $_POST["vereniging"]) ? "selected" : "";
+                                                echo '<option value="'.$v["vereniging_id"].'" '.$selected.'>'.$v["naam"].'</option>';
+                                            }
+                                            ?>
+                                        </select>
+                                        <label for="icon_telephone">Vereniging</label>
+                                    </div>
+                                </div>
 
-                <h4 style="text-align: center; padding-top: 15px;">Nieuwe reservering</h4>
-
-                <div class="card-content">
-                    <?php if(!empty($this->obj->data["message"])){ ?>
-                        <div class="chip">
-                            <?php $icon = ($this->obj->data["message"] == "Reservering was succesvol toegevoegd") ?  "success" : "exclamation_mark" ; ?>
-                            <img src="/template/images/<?= $icon ?>.png" alt="Form not filled in correctly">
-                            <?= $this->obj->data["message"] ?>
-                            <i class="close material-icons">close</i>
-                        </div>
-                    <?php } ?>
-                    <h5>Persoonlijke gegevens</h5>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="icon_prefix" name="voornaam" type="text" class="validate" maxlength="20" data-length="20" required value="<?php if(isset($_POST["voornaam"])){echo $_POST["voornaam"];} ?>">
-                            <label for="icon_prefix">Voornaam</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="icon_prefix" name="achternaam" type="text" class="validate" maxlength="40" data-length="40" required value="<?php if(isset($_POST["achternaam"])){echo $_POST["achternaam"];} ?>">
-                            <label for="icon_prefix">Achternaam</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">email</i>
-                            <input id="text" type="email" name="email" class="validate" maxlength="50" data-length="50"  required value="<?php if(isset($_POST["email"])){echo $_POST["email"];} ?>">
-                            <label for="icon_telephone">Email adres</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">phone_iphone</i>
-                            <input id="text" type="text" name="telefoon" maxlength="15" data-length="15"  class="validate" value="<?php if(isset($_POST["telefoon"])){echo $_POST["telefoon"];} ?>">
-                            <label for="icon_telephone">Telefoon nummer (optioneel)</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">flag</i>
-                            <select class="form-control" name="vereniging">
-                                <?php
-                                    foreach($this->obj->data["verenigingen"] as $v){
-                                        $selected = ($v["vereniging_id"] == $_POST["vereniging"]) ? "selected" : "";
-                                        echo '<option value="'.$v["vereniging_id"].'" '.$selected.'>'.$v["naam"].'</option>';
-                                    }
-                                ?>
-                            </select>
-                            <label for="icon_telephone">Vereniging</label>
-                        </div>
+                                <h5>De reservering</h5>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">event</i>
+                                        <input type="text" name="datum" class="datepicker" required value="<?php if(isset($_POST["datum"])){echo $_POST["datum"];} ?>">
+                                        <label for="icon_prefix">Datum</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">people</i>
+                                        <input type="number" name="personen" required value="<?php if(isset($_POST["personen"])){echo $_POST["personen"];} ?>">
+                                        <label for="icon_prefix">Aantal personen</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">access_time</i>
+                                        <select class="form-control" name="shift" >
+                                            <?php
+                                            foreach($this->obj->data["shifts"] as $v){
+                                                $bg_tijd = new DateTime($v["begin_tijd"]);
+                                                $ed_tijd = new DateTime($v["eind_tijd"]);
+                                                $selected = ($v["shift_id"] == $_POST["shift"]) ? "selected" : "";
+                                                echo '<option value="'.$v["shift_id"].'" '.$selected.'>'.$v["opmerking"].' - '.$bg_tijd->format('H:i').' t/m '.$ed_tijd->format('H:i').'</option>';
+                                            }
+                                            ?>
+                                        </select>
+                                        <label for="icon_prefix">Kies een shift</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <i class="prefix material-icons">comment</i>
+                                        <textarea id="textarea1" name="opmerking" maxlength="500" data-length="500" class="materialize-textarea" ><?php if(isset($_POST["opmerking"])){echo $_POST["opmerking"];} ?></textarea>
+                                        <label for="icon_telephone">Opmerkingen/dieetwensen</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-action">
+                                <button type="submit" class="waves-effect waves-light btn right green darken-1" >RESERVERING AANMAKEN</button>
+                                <a href="/pages/home" class="waves-effect waves-teal btn grey lighten-1">ANNULEREN</a>
+                            </div>
+                        </form>
                     </div>
+                </div>
+                <div class="col s4">
+                    <div class="card">
+                        <div class="card-image">
+                            <iframe style="margin-top: -10px; margin-bottom: -10px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d607.11973199944!2d6.100079962781191!3d52.506671267662256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7df26cb7fae99%3A0xbf24e6ace98bdac5!2sSociaal+Culturele+Vereniging+Eureka!5e0!3m2!1snl!2snl!4v1517561200285" width="100%" height="250" frameborder="0" style="border:0; padding-top: 25px;"></iframe>
+                        </div>
 
-                    <h5>De reservering</h5>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix">event</i>
-                            <input type="text" name="datum" class="datepicker" required value="<?php if(isset($_POST["datum"])){echo $_POST["datum"];} ?>">
-                            <label for="icon_prefix">Datum</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix">people</i>
-                            <input type="number" name="personen" required value="<?php if(isset($_POST["personen"])){echo $_POST["personen"];} ?>">
-                            <label for="icon_prefix">Aantal personen</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">access_time</i>
-                            <select class="form-control" name="shift" >
+                    </div>
+                    <div class="card" style="margin-top:30px">
+                        <div class="card-content">
+                            <h4>Openingstijden</h4>
+                            <table class="table bordered">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
                                 <?php
-                                    foreach($this->obj->data["shifts"] as $v){
-                                        $bg_tijd = new DateTime($v["begin_tijd"]);
-                                        $ed_tijd = new DateTime($v["eind_tijd"]);
-                                        $selected = ($v["shift_id"] == $_POST["shift"]) ? "selected" : "";
-                                        echo '<option value="'.$v["shift_id"].'" '.$selected.'>'.$v["opmerking"].' - '.$bg_tijd->format('H:i').' t/m '.$ed_tijd->format('H:i').'</option>';
+                                    $dagen = array('Maandag','Dinsdag','Donderdag','Vrijdag','Zaterdag');
+                                    foreach($dagen as $dag){
+                                        echo '<tr>';
+                                            echo '<th>'.$dag.'</th>';
+                                            echo '<td>';
+                                                if($dag != 'Dinsdag'){
+                                                    foreach($this->obj->data["shifts"] as $v){
+                                                        $bg_tijd = new DateTime($v["begin_tijd"]);
+                                                        $ed_tijd = new DateTime($v["eind_tijd"]);
+                                                        echo $bg_tijd->format('H:i').' t/m '.$ed_tijd->format('H:i').'<br />';
+                                                    }
+                                                }else{
+                                                    $bg_tijd = new DateTime($this->obj->data["shifts"][0]["begin_tijd"]);
+                                                    $ed_tijd = new DateTime($this->obj->data["shifts"][0]["eind_tijd"]);
+                                                    echo $bg_tijd->format('H:i').' t/m '.$ed_tijd->format('H:i').'<br />';
+                                                }
+                                            echo '<td>';
+                                        echo '</tr>';
                                     }
+
                                 ?>
-                            </select>
-                            <label for="icon_prefix">Kies een shift</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="prefix material-icons">comment</i>
-                            <textarea id="textarea1" name="opmerking" maxlength="500" data-length="500" class="materialize-textarea" ><?php if(isset($_POST["opmerking"])){echo $_POST["opmerking"];} ?></textarea>
-                            <label for="icon_telephone">Opmerkingen/dieetwensen</label>
+                            </table>
+                            <p>
+
                         </div>
                     </div>
                 </div>
-                <div class="card-action">
-                    <button type="submit" class="waves-effect waves-light btn right green darken-1" >RESERVERING AANMAKEN</button>
-                    <a href="/pages/home" class="waves-effect waves-teal btn grey lighten-1">ANNULEREN</a>
-                </div>
-            </form>
+            </div>
         </div>
+
 
     </div>
 

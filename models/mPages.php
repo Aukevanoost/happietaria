@@ -67,4 +67,18 @@ class mPages
 
     }
 
+    public function editProfile(){
+
+        $data = array();
+
+        $qry = " SELECT * FROM gebruiker WHERE gebruiker_id = ".$_SESSION["gebruiker"]["gebruiker_id"];
+
+        $stmt = $this->Conn->prepare($qry);
+
+        if($stmt->execute()){
+            $data = $stmt->fetchAll();
+        }
+        return $data[0];
+    }
+
 }

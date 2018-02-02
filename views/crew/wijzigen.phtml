@@ -1,0 +1,136 @@
+<?php
+$i =  $this->obj->data["inschrijving"];
+
+$afdeling = '';
+$diploma = '';
+
+foreach($this->obj->data["skills"] as $s){
+
+        if($s["type"] == 1){
+            $afdeling .= '<p><input type="checkbox" id="test7" class="filled-in" checked="checked" disabled="disabled" /><label for="test7">'. $s["vaardigheid"].'</label></p>';
+        } else{
+            $diploma .= '<p><input type="checkbox" id="test7" class="filled-in" checked="checked" disabled="disabled" /><label for="test7">'. $s["vaardigheid"].'</label></p>';
+        }
+    }
+?>
+<br />
+<div class="container">
+    <form action="" method="post">
+        <div class="row">
+
+            <div class="col s6">
+                <div class="card" style="height: 650px">
+                    <div class="card-content">
+                        <h4>Voorkeur  </h4>
+                        <br />
+                        <table class="table bordered">
+                            <tr>
+                                <th valign="top">Gekozen taken:</th>
+                                <td><?= $afdeling ?></td>
+                            </tr>
+                            <tr>
+                                <th valign="top">Gekozen diploma's:</th>
+                                <td><?= $diploma ?></td>
+                            </tr>
+                            <tr>
+                                <th>Beschikbaar:</th>
+                                <td>
+                                    <div class="input-field" style="margin-bottom: -30px; margin-top:-10px">
+                                        <input type="text" style="height: 30px;"   maxlength="20" style="height: 30px;" name="beschikbaar" value="<?= $i["beschikbaar"] ?>"/>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Opmerking:</th>
+                                <td>
+                                    <div class="input-field" style="margin-bottom: -30px">
+                                        <textarea class="materialize-textarea"  maxlength="300" style="margin-top: -25px" name="opmerking" ><?= $i["opmerking"] ?></textarea>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr valign="top">
+                                <th valign="top">Status:</th>
+                                <td>
+                                    <p>
+                                        <input name="status" readonly disabled type="radio" id="state1" <?= ($i["active"] == 1 && $i["contact_gehad"] == 0) ? "checked" : "" ; ?>/>
+                                        <label for="state1">Nieuw</label>
+                                    </p>
+                                    <p>
+                                        <input name="status" readonly disabled type="radio" id="state2" <?= ($i["active"] == 1 && $i["contact_gehad"] == 1) ? "checked" : "" ; ?>/>
+                                        <label for="state2">Bekeken</label>
+                                    </p>
+                                    <p>
+                                        <input name="status" readonly disabled type="radio" id="state3"  <?= ($i["active"] == 0) ? "checked" : "" ; ?>/>
+                                        <label for="state3">Verwijderd</label>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6">
+                <div class="card"  style="height: 650px">
+                    <div class="card-content">
+                        <h4>Vrijwilliger</h4>
+                        <br />
+                        <table class="table bordered">
+                            <input type="hidden" name="user_id" value="<?= $i["  "] ?>" />
+                            <tr>
+                                <th><i class="material-icons">account_circle</i></th>
+                                <td>
+                                    <div style="margin-bottom: -30px;margin-top: -10px;">
+                                        <input type="text" style="width:30%; height: 30px;" name="voornaam" value="<?= $i["voornaam"] ?>" />
+                                        <input type="text" style="width:45%; height: 30px;" name="achternaam" value="<?= $i["achternaam"] ?>" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="material-icons">mail</i></th>
+                                <td>
+                                    <div style="margin-bottom: -30px;margin-top: -10px;">
+                                        <input type="text" style="width:75%; height: 30px; margin-right: 10px" name="email" value="<?= $i["email"] ?>" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="material-icons">phone_iphone</i></th>
+                                <td>
+                                    <div style="margin-bottom: -30px;margin-top: -10px;">
+                                        <input type="text" style="width:75%; height: 30px; margin-right: 10px" name="phone" maxlength="13" value="<?= $i["telefoon"] ?>" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="material-icons">flag</i></th>
+                                <td>
+                                    <div style="margin-bottom: -30px;margin-top: -10px;">
+                                        <b><?= $i["vereniging"] ?></b>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <img src="https://image.flaticon.com/icons/png/512/10/10991.png" style="position: absolute; bottom: -40px; right: 0; width: 300px" />
+                    </div>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="card">
+                    <div class="card-content">
+                        <input type="submit" name="Opslaan" value="opslaan" class="btn  red orange darken-2 right"/>
+                        <a href="reservering/bekijken/<?= $_GET["id"] ?>" class="btn-flat right">ANNULEREN</a>
+                        <div style="clear:both"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+        $('#textarea1').trigger('autoresize');
+    });
+</script>

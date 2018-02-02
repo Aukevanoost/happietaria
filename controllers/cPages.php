@@ -48,6 +48,13 @@ class cPages extends Controller
         $_GET["page_header"] = false;
     }
 
+    public function doneer(){
+        $_GET["page_title"] = "Doneer";
+        $_GET["template"] = "public";
+        $this->data = array();
+        $_GET["page_header"] = true;
+        $_GET["page_footer"] = true;
+    }
 
 
     public function inloggen(){
@@ -72,6 +79,8 @@ class cPages extends Controller
         if(!isset($_SESSION['ingelogd']) || empty($_SESSION['ingelogd'])) {
             header("location: /pages/inloggen");
         }
+
+        // $this->data[""]
 
         $_GET["template"] = "private";
         $_GET["page_title"] = "Dashboard";

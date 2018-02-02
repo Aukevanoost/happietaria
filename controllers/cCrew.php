@@ -9,7 +9,7 @@ class cCrew extends Controller
 {
     public $data;
     private $model;
-    protected $protected_pages = array('index','action','bekijken','sendmail');
+    protected $protected_pages = array('index','action','bekijken','sendmail','wijzigen');
 
 
     public function __construct()
@@ -61,6 +61,25 @@ class cCrew extends Controller
 
         $this->data["inschrijving"] = $this->model->getFromId($_GET["id"]);
         $this->data["skills"] = $this->model->getChosenSkills($_GET["id"]);
+    }
+
+
+    public function wijzigen(){
+        $_GET["template"] = "private";
+        $_GET["page_title"] = "Inschrijving wijzigen";
+
+
+        if(!empty($_POST)){
+            $this->data["message"] = $this->model->editCrewMember();
+        }else{
+            $this->data["message"] = "";
+        }
+
+
+        //$this->data["status"] = $this->model->getStates();
+        //$this->data["shifts"] = $this->model->getShifts();
+        $this->data["skills"] = $this->model->getChosenSkills($_GET["id"]);
+        $this->data["inschrijving"] = $this->model->getFromId($_GET["id"]);
     }
 
 

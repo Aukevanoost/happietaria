@@ -70,7 +70,12 @@ $r["datum"] = new DateTime($r["datum"]);
             <div class="col s12">
                 <div class="card">
                     <div class="card-content">
-
+                        <?php
+                        if(isset($_POST["JUDGE"])){
+                            $acc = ($_POST["JUDGE"] == "ACCEPT") ? 1 : 2;
+                            echo '<input type="hidden" name="isAccepted" value="'.$acc.'" />';
+                        }
+                        ?>
                         <button type="submit" name="confirmation" value="mailOk" class="btn green darken-1 right" style="margin-left: 10px">Send mail</button>
                         <a href="reservering/bekijken/<?= $_GET["id"] ?>" class="btn-flat right">ANNULEREN</a>
 

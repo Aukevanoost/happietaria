@@ -6,7 +6,11 @@
 
     foreach($this->obj->data["skills"] as $s){
 
-        if($s["type"] == 1){ $afdeling .= '- '. $s["vaardigheid"].'<br />'; } else{ $diploma .= '- '. $s["vaardigheid"].'<br />'; }
+        if($s["type"] == 1){
+            $afdeling .= '<p><input type="checkbox" id="test7" class="filled-in" checked="checked" disabled="disabled" /><label for="test7">'. $s["vaardigheid"].'</label></p>';
+        } else{
+            $diploma .= '<p><input type="checkbox" id="test7" class="filled-in" checked="checked" disabled="disabled" /><label for="test7">'. $s["vaardigheid"].'</label></p>';
+        }
     }
 ?>
 <br />
@@ -18,6 +22,7 @@
             </a>
             <ul>
                 <li><a href="crew/sendmail/<?= $_GET["id"]  ?>" class="btn-floating green tooltipped" data-position="top" data-delay="50" data-tooltip="Vrijwilliger mailen"><i class="material-icons">email</i></a></li>
+                <li><a href="crew/wijzigen/<?= $_GET["id"]  ?>" class="btn-floating blue tooltipped" data-position="top" data-delay="50" data-tooltip="Vrijwilliger wijzigen"><i class="material-icons">edit</i></a></li>
             </ul>
         </div>
         <div class="col s6">

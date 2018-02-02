@@ -269,4 +269,62 @@ Het Zwolse Happietaria Team.
 
         header("locattion: /inschrijving/index");
     }
+
+
+
+    public function editCrewMember(){
+        $data = "";
+
+
+        $phone = preg_replace('/[^-\+\s_0-9]/',"",$_POST["phone"]);
+        $voornaam = filter_var($_POST["voornaam"],FILTER_SANITIZE_STRING);
+        $achternaam = filter_var($_POST["achternaam"],FILTER_SANITIZE_STRING);
+        $email = filter_var($_POST["email"],FILTER_SANITIZE_EMAIL);
+        $user_id = preg_replace('/[^0-9]/',"",$_POST["user_id"]);
+
+
+        $beschikbaar = filter_var($_POST["beschikbaar"],FILTER_SANITIZE_STRING);
+        $opmerking = filter_var($_POST["opmerking"],FILTER_SANITIZE_STRING);
+
+
+        try{
+            // Inschrijving wijzigen
+            $stmt = $this->Conn->prepare("UPDATE inschrijving SET beschikbaar = :beschikbaar, opmerking = :opmerking WHERE inschrijving_id = ".$_GET["id"]);
+
+            $stmt->bindParam(':beschikbaar',$beschikbaar);
+            $stmt->bindParam(':opmerking',$opmerking);
+
+            if($stmt->execute()){
+                // Gebruiker wijzigen
+                $stmt = $this->Conn->prepare("UPDATE gebruiker SET voornaam = :voornaam, achternaam = :achternaam, email = :email, telefoon = :telefoon WHERE gebruiker_id = :gebruiker_id");
+
+                $stmt->bindParam(':voornaam',$voornaam);
+                $stmt->bindParam(':achternaam',$achternaam);
+                $stmt->bindParam(':email',$email);
+                $stmt->bindParam(':telefoon',$phone);
+                $stmt->bindParam(':gebruiker_id',$user_id);
+
+                if($stmt->execute()) {
+                    // Confirmation bericht
+                    $data = '<div class="chip">Inschrijving is succesvol gewijzigd!<i class="close material-icons">close</i></div>';
+                    header("location: /crew/bekijken/".$_GET["id"]);
+                }else{
+                    $data = '<div class="chip">Tijdens het wijzigen van de gebruiker ging er iets mis<i class="close material-icons">close</i></div>';
+                }
+
+
+            }else{
+                $data = '<div class="chip">Tijdens het wijzigen van de inschrijving ging er iets mis<i class="close material-icons">close</i></div>';
+
+            }
+
+
+
+        }catch(Exception $ex){
+            $data = '<div class="chip">Tijdens het wijzigen van de inschrijving ging er iets mis<i class="close material-icons">close</i></div>';
+        }
+
+
+        return $data;
+    }
 }

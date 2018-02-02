@@ -1,10 +1,24 @@
 /* Main style
 ---------------------------------------------- */
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
 body{
     /*background-color: #00e5ff !important;*/
-    margin: 0px;
-    padding: 0px;
-    background: #fff !important;
+    position: relative;
+    margin: 0;
+    padding-bottom: 300px;
+    min-height: 100%;
+
 }
 
 
@@ -106,7 +120,12 @@ th {
 }
 
 footer{
-    margin-top: 45px;
+    margin-top: 250px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
 }
 
 #footer1{

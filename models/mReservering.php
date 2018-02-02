@@ -438,10 +438,25 @@ Het Zwolse Happietaria Team.
             //die($_POST["datum"]);
             $datetime       = DateTime::createFromFormat('d F, Y', $_POST["datum"]);
             $current_date   = new DateTime();
+
+            // niet in het verleden
             if ($datetime < $current_date){
                 return 'Deze datum is al geweest, Wij adviseren u een datum te kiezen die nog moet komen.';
             }
-            $datetime = $datetime->format('Y-m-d');
+
+            // binnen de datums
+            $begin_date = DateTime::createFromFormat('Y-m-d', "2018-02-19");
+            $end_date = DateTime::createFromFormat('Y-m-d', "2018-03-17");
+            if($datetime < $begin_date || $datetime > $end_date){
+                return 'Wij zijn open tussen 19 februari en 17 maart 2018';
+            }
+
+            // Als dag ok is
+            $dagokarray = array('Mon','Tue','Thu','Fri','Sat');
+            if(!in_array($datetime->format ("D"),$dagokarray)){
+                return 'Wij zijn open op maandag, dinsdag, donderdag, vrijdag en zaterdag';
+            }
+
         }catch(Exception $ex){
             return 'Deze datum is niet geldig.';
         }

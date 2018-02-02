@@ -148,6 +148,8 @@ class cReservering extends Controller
                 $this->data["mail"] = array("subject" => $_POST["onderwerp"], "message" => $_POST["inhoud"]);
             }else{
                 $this->data["message"] = '<div class="chip">Something went terribly wrong, please try again.<i class="close material-icons">close</i></div>';
+                $this->data["mail"] = array("subject" => $_POST["onderwerp"], "message" => $_POST["inhoud"]);
+
             }
         }else {
             //$this->data["message"] = "<div class=\"chip\">Whats this? a bug?.<i class=\"close material-icons\">close</i></div>";
