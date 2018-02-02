@@ -22,6 +22,7 @@ class cCrew extends Controller
     public function nieuw()
     {
         $_GET["page_title"] = "Nieuwe reservering";
+        $_GET["page_footer"] = false;
         $_GET["template"] = "public";
 
         $this->data["message"] = "";

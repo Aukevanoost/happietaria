@@ -31,7 +31,7 @@
         <?= '<link href="/template/_css/'.$_GET["template"].'.css" rel="stylesheet" />'; ?>
 
     </head>
-    <body style="background: #eee">
+    <body>
             <?php
                 // Head
                 if($_GET["page_header"]) {
@@ -40,8 +40,9 @@
 
                 // body
                 echo $content;
-
-                include('template/footers/'.$_GET["template"].'.phtml');
+                if($_GET["page_footer"]) {
+                    include('template/footers/' . $_GET["template"] . '.phtml');
+                }
             ?>
 
     </body>

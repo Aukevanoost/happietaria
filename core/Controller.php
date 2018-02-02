@@ -20,7 +20,8 @@ abstract class Controller
     public function __construct(){
 
         // Default properties
-        $_GET["header"] = false;
+        $_GET["page_footer"] = false;
+        $_GET["page_footer"] = true;
         $_GET["template"] = "public";
         $this->Data = array();
 

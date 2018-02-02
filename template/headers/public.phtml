@@ -1,14 +1,41 @@
-<nav>
+<ul id="slide-out" class="side-nav">
+    <img src="/template/images/logo_mail.jpeg" width="100%">
 
-    <a href="/pages/home"><div id="brand"><img src="/template/images/icons/icon_happietaria.png" height="100%"/></div></a>
-    <ul>
-        <li><a href="reservering/nieuw">RESERVEREN</a></li>
-        <li><a href="crew/nieuw">MEEHELPEN</a></li>
-        <li><a href="pages/project">PROJECT</a></li>
-        <li><a href="pages/sponsoring">SPONSORING</a></li>
-        <li><a href="pages/contact">CONTACT</a></li>
-    </ul>
-    <ul class="right">
-        <li><a href="https://www.facebook.com/happietariazwolle/" target="_blank"><img src="/template/images/icons/facebook_nav.png" height="30px" /></a></li>
-    </ul>
+    <li><a href="#!"><i class="material-icons">home</i>Homepage</a></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Subheader</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+</ul>
+
+
+
+<nav>
+    <div id="desktopNav">
+        <a href="/pages/home"><div id="brand"><img src="/template/images/icons/icon_happietaria.png" height="100%"/></div></a>
+        <ul>
+
+            <li><a href="pages/project">PROJECT</a></li>
+            <li><a href="pages/sponsoring">SPONSORING</a></li>
+            <li><a href="reservering/nieuw">RESERVEREN</a></li>
+            <li><a href="crew/nieuw">MEEHELPEN</a></li>
+            <li><a href="pages/contact">CONTACT</a></li>
+        </ul>
+        <ul class="right socialmedia">
+            <li><a href="https://www.facebook.com/happietariazwolle/" target="_blank"><img src="/template/images/icons/facebook.png" height="30px" /></a></li>
+            <li><a href="/pages/inloggen" target="_blank"><img src="/template/images/icons/signin.png" height="30px" /></a></li>
+        </ul>
+    </div>
+    <div id="mobileNav">
+        <a href="/pages/home"><div id="brand"><img src="/template/images/icons/icon_happietaria.png" height="100%"/></div></a>
+
+        <div class="right">
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="font-size: 48px; padding-top: 8px">menu</i></a>
+        </div>
+    </div>
 </nav>
+
+<script>
+    $(".button-collapse").sideNav();
+</script>
