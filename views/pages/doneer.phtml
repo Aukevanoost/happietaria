@@ -11,16 +11,17 @@
         <div id="information" class="container">
             <div id="information_card" class="card">
                 <div class="card-content">
-                    <h2>
-                        <i class="medium material-icons z-depth-3">insert_chart</i> Doneren
-                    </h2>
+
                     <br>
-                    <p class="information_paragraph">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
-                    </p>
-                    <br>
-                    <br>
-                    <p class="information_paragraph">
+                    <p style="font-size: 20px;text-align: center; " class="information_paragraph">
+                        Om Zuid-Sudan zelfvoorzienend te maken en hun samenleving weer op te bouwen hebben wij een bedrag van maar liefst €27.000,- nodig! Helpt u mee om dit fantastische project te realiseren?
+                    </p><br /><br />
+                    <div id="gauger_container" class="z-depth-4">
+                        <p id="gauger_label">0/0</p>
+                        <div id="gauger_volume"></div>
+                    </div>
+                    <br /><br />
+                    <p class="information_paragraph" style="text-align: center; font-style: italic">
                         U kunt uw bijdrage overmaken naar: NL26 RABO 0320 3784 62 T.n.v. Stichting TEAR Fund Nederland
                     </p>
                 </div>
@@ -32,3 +33,19 @@
 
 </section>
 
+<script>
+    $(document).ready(function(){
+        $('.parallax').parallax();
+    });
+
+    $(function(){
+        var goal = 27000;
+        var current = 0;
+        var perc = (current / goal) * 100;
+        $("#gauger_volume").css("width",perc+ "%");
+        current = Number(current).toLocaleString('nl');
+        goal = Number(goal).toLocaleString('nl');
+
+        $("#gauger_label").html(current + " / " + goal + " &euro;");
+    });
+</script>

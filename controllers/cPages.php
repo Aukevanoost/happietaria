@@ -31,13 +31,13 @@ class cPages extends Controller
 
 
     public function onsdoel(){
-        $_GET["page_title"] = "onsdoel";
-        $_GET["template"] = "public";
+$_GET["page_title"] = "onsdoel";
+$_GET["template"] = "public";
 
-        $this->data = array();
-        $_GET["page_header"] = true;
-        $_GET["page_footer"] = true;
-    }
+$this->data = array();
+$_GET["page_header"] = true;
+$_GET["page_footer"] = true;
+}
 
 
 
@@ -106,8 +106,4 @@ class cPages extends Controller
 
     }
 
-
-    public function showPassword(){
-        $this->data["message"] = $this->model->getPassword();
-    }
 }
