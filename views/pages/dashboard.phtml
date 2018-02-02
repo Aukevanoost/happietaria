@@ -23,30 +23,30 @@
                     </p>
                 </div>
                 <div class="col s4 z-depth-3" style="padding-bottom: 8px">
-                    <div class="card-content">
+                    <form action="" method="post" class="card-content">
+                        <?= $this->obj->data["message"] ?>
                         <h3>Account wijzigen</h3>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input value="<?= $_SESSION["gebruiker"]["email"] ?>" id="disabled" type="email" class="validate">
+                                <input name="email" value="<?= $_SESSION["gebruiker"]["email"] ?>" id="disabled" type="email" class="validate">
                                 <label for="email">Email adres</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input value="" id="passwd1" type="text" class="validate">
+                                <input name="wachtwoord1" value="" id="passwd1" type="password" class="validate">
                                 <label for="passwd1">Wachtwoord</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
-                                <input value="" id="passwd2" type="text" class="validate">
+                                <input name="wachtwoord2" value="" id="passwd2" type="password" class="validate">
                                 <label for="passwd2">Wachtwoord herhalen</label>
                             </div>
                         </div>
                         <input type="submit" name="Opslaan" value="opslaan" class="btn  red orange darken-2 right"/>
                         <br />
-                        <br />
-                    </div>
+                    </form>
 
 
 

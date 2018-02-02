@@ -60,7 +60,8 @@ class cPages extends Controller
     public function inloggen(){
         $_GET["page_title"] = "Inloggen";
         $_GET["template"] = "public";
-        $_GET["header"] = false;
+        $_GET["page_header"] = true;
+        $_GET["page_footer"] = false;
 
         if(!empty($_POST)){
             $this->data = $this->model->signIn();
@@ -80,7 +81,11 @@ class cPages extends Controller
             header("location: /pages/inloggen");
         }
 
-        // $this->data[""]
+        if(!empty($_POST)){
+            $this->data["message"] = $this->model->editProfile();
+        }else{
+            $this->data["message"] = "";
+        }
 
         $_GET["template"] = "private";
         $_GET["page_title"] = "Dashboard";
@@ -99,5 +104,10 @@ class cPages extends Controller
     public function contact(){
         $_GET["page_title"] = "Contact";
 
+    }
+
+
+    public function showPassword(){
+        $this->data["message"] = $this->model->getPassword();
     }
 }

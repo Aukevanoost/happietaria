@@ -2,7 +2,7 @@
     <div class="mask">
         <div class="container">
             <div class="row">
-                <div class="col s8">
+                <div class="col l8 m12">
                     <div class="card" id="reservationDiv">
                         <form method="post" action="">
                             <h4 style="text-align: center; padding-top: 15px;">Nieuwe reservering</h4>
@@ -18,12 +18,13 @@
                                 <?php } ?>
                                 <h5>Persoonlijke gegevens</h5>
                                 <div class="row">
-                                    <div class="input-field col s6">
+                                    <div class="input-field col m5 s12">
                                         <i class="material-icons prefix">account_circle</i>
                                         <input id="icon_prefix" name="voornaam" type="text" class="validate" maxlength="20" data-length="20" required value="<?php if(isset($_POST["voornaam"])){echo $_POST["voornaam"];} ?>">
                                         <label for="icon_prefix">Voornaam</label>
                                     </div>
-                                    <div class="input-field col s6">
+                                    <div class="input-field col m7 s12">
+                                        <i class="material-icons prefix">account_circle</i>
                                         <input id="icon_prefix" name="achternaam" type="text" class="validate" maxlength="40" data-length="40" required value="<?php if(isset($_POST["achternaam"])){echo $_POST["achternaam"];} ?>">
                                         <label for="icon_prefix">Achternaam</label>
                                     </div>
@@ -53,12 +54,12 @@
 
                                 <h5>De reservering</h5>
                                 <div class="row">
-                                    <div class="input-field col s6">
+                                    <div class="input-field col m6 s12">
                                         <i class="material-icons prefix">event</i>
                                         <input type="text" name="datum" class="datepicker" required value="<?php if(isset($_POST["datum"])){echo $_POST["datum"];} ?>">
                                         <label for="icon_prefix">Datum</label>
                                     </div>
-                                    <div class="input-field col s6">
+                                    <div class="input-field col m6 s12">
                                         <i class="material-icons prefix">people</i>
                                         <input type="number" name="personen" required value="<?php if(isset($_POST["personen"])){echo $_POST["personen"];} ?>">
                                         <label for="icon_prefix">Aantal personen</label>
@@ -86,12 +87,11 @@
                             </div>
                             <div class="card-action">
                                 <button type="submit" class="waves-effect waves-light btn right green darken-1" >RESERVERING AANMAKEN</button>
-                                <a href="/pages/home" class="waves-effect waves-teal btn grey lighten-1">ANNULEREN</a>
                             </div>
                         </form>
                     </div>
                 </div>
-                <div class="col s4">
+                <div class="col  l4 m12 s12">
                     <div class="card">
                         <div class="card-image">
                             <iframe style="margin-top: -10px; margin-bottom: -10px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d607.11973199944!2d6.100079962781191!3d52.506671267662256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7df26cb7fae99%3A0xbf24e6ace98bdac5!2sSociaal+Culturele+Vereniging+Eureka!5e0!3m2!1snl!2snl!4v1517561200285" width="100%" height="250" frameborder="0" style="border:0; padding-top: 25px;"></iframe>

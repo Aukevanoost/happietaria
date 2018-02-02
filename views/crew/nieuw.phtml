@@ -5,7 +5,7 @@
     foreach($this->obj->data["skills"] as $s){
         //$selected = ($v["vereniging_id"] == $_POST["vereniging"]) ? "selected" : "";
         //echo '<option value="'.$v["vereniging_id"].'" '.$selected.'>'.$v["naam"].'</option>';
-        $chkbox =  '<div class="col s6"><p>';
+        $chkbox =  '<div class="col m6 s12"><p>';
         $chkbox .= '<input type="checkbox" name="vaardigheden[]" value="'.$s["skill_id"].'" id="skill'.$s["skill_id"].'" />';
         $chkbox .= '<label for="skill'.$s["skill_id"].'">'.$s["vaardigheid"].'</label><br /><br />';
         $chkbox .= '</p></div>';
@@ -20,97 +20,96 @@
 
 <div id="res_wp">
     <div class="mask">
+        <div class="container">
+            <div class="card" id="reservationDiv">
+                <form class="card-content" method="post" action="">
 
-        <div class="card" id="reservationDiv">
-            <form method="post" action="">
+                    <h4 style="text-align: center; padding-top: 15px;">Ook vrijwilliger worden?</h4>
 
-                <h4 style="text-align: center; padding-top: 15px;">Ook vrijwilliger worden?</h4>
+                    <div class="card-content">
+                        <?php if(!empty($this->obj->data["message"])){ ?>
+                            <div class="chip">
+                                <?php $icon = ($this->obj->data["message"] == "Reservering was succesvol toegevoegd") ?  "success" : "exclamation_mark" ; ?>
+                                <img src="/template/images/<?= $icon ?>.png" alt="Form not filled in correctly">
+                                <?= $this->obj->data["message"] ?>
+                                <i class="close material-icons">close</i>
+                            </div>
+                        <?php } ?>
+                        <h5>Basis gegevens</h5>
+                        <div class="row">
+                            <div class="input-field col m5 s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" name="voornaam" type="text" class="validate" maxlength="20" data-length="20" required value="<?php if(isset($_POST["voornaam"])){echo $_POST["voornaam"];} ?>">
+                                <label for="icon_prefix">Voornaam</label>
+                            </div>
+                            <div class="input-field col m7 s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" name="achternaam" type="text" class="validate" maxlength="40" data-length="40" required value="<?php if(isset($_POST["achternaam"])){echo $_POST["achternaam"];} ?>">
+                                <label for="icon_prefix">Achternaam</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                                <input id="text" type="email" name="email" class="validate" maxlength="50" data-length="50"  required value="<?php if(isset($_POST["email"])){echo $_POST["email"];} ?>">
+                                <label for="icon_telephone">Email adres</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">phone_iphone</i>
+                                <input id="text" type="text" name="telefoon" maxlength="15" data-length="15"  class="validate" value="<?php if(isset($_POST["telefoon"])){echo $_POST["telefoon"];} ?>">
+                                <label for="icon_telephone">Telefoon nummer (optioneel)</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">flag</i>
+                                <select class="form-control" name="vereniging">
+                                    <?php
+                                    foreach($this->obj->data["verenigingen"] as $v){
+                                        $selected = ($v["vereniging_id"] == $_POST["vereniging"]) ? "selected" : "";
+                                        echo '<option value="'.$v["vereniging_id"].'" '.$selected.'>'.$v["naam"].'</option>';
+                                    }
+                                    ?>
+                                </select>
+                                <label for="icon_telephone">Vereniging</label>
+                            </div>
+                            <br /><br />
 
-                <div class="card-content">
-                    <?php if(!empty($this->obj->data["message"])){ ?>
-                        <div class="chip">
-                            <?php $icon = ($this->obj->data["message"] == "Reservering was succesvol toegevoegd") ?  "success" : "exclamation_mark" ; ?>
-                            <img src="/template/images/<?= $icon ?>.png" alt="Form not filled in correctly">
-                            <?= $this->obj->data["message"] ?>
-                            <i class="close material-icons">close</i>
-                        </div>
-                    <?php } ?>
-                    <h5>Basis gegevens</h5>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix">account_circle</i>
-                            <input id="icon_prefix" name="voornaam" type="text" class="validate" maxlength="20" data-length="20" required value="<?php if(isset($_POST["voornaam"])){echo $_POST["voornaam"];} ?>">
-                            <label for="icon_prefix">Voornaam</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input id="icon_prefix" name="achternaam" type="text" class="validate" maxlength="40" data-length="40" required value="<?php if(isset($_POST["achternaam"])){echo $_POST["achternaam"];} ?>">
-                            <label for="icon_prefix">Achternaam</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">email</i>
-                            <input id="text" type="email" name="email" class="validate" maxlength="50" data-length="50"  required value="<?php if(isset($_POST["email"])){echo $_POST["email"];} ?>">
-                            <label for="icon_telephone">Email adres</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">phone_iphone</i>
-                            <input id="text" type="text" name="telefoon" maxlength="15" data-length="15"  class="validate" value="<?php if(isset($_POST["telefoon"])){echo $_POST["telefoon"];} ?>">
-                            <label for="icon_telephone">Telefoon nummer (optioneel)</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">flag</i>
-                            <select class="form-control" name="vereniging">
+                            <div class="row">
+                                <div class="col s12"><h5 style="padding-top: 15px; padding-bottom: 8px;">Welke functie zou je willen/kunnen?</h5></div>
+                                <?= $afdeling ?>
+                            </div>
+
+                            <div class="row">
+                                <div class="col s12"><h5 style="padding-top: 15px; padding-bottom: 8px;">Diploma's</h5></div>
+                                <?= $diploma ?>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col s12"><h5 style="padding-top: 15px; padding-bottom: 8px;">Op welke dagen ben je beschikbaar?</h5></div>
                                 <?php
-                                foreach($this->obj->data["verenigingen"] as $v){
-                                    $selected = ($v["vereniging_id"] == $_POST["vereniging"]) ? "selected" : "";
-                                    echo '<option value="'.$v["vereniging_id"].'" '.$selected.'>'.$v["naam"].'</option>';
-                                }
-                                ?>
-                            </select>
-                            <label for="icon_telephone">Vereniging</label>
-                        </div>
-                        <br /><br />
-
-                        <div class="row">
-                            <div class="col s12"><h5 style="padding-top: 15px; padding-bottom: 8px;">Welke functie zou je willen/kunnen?</h5></div>
-                            <?= $afdeling ?>
-                        </div>
-
-                        <div class="row">
-                            <div class="col s12"><h5 style="padding-top: 15px; padding-bottom: 8px;">Diploma's</h5></div>
-                            <?= $diploma ?>
-                        </div>
-
-
-                        <div class="row">
-                            <div class="col s12"><h5 style="padding-top: 15px; padding-bottom: 8px;">Op welke dagen ben je beschikbaar?</h5></div>
-                            <?php
                                 $days = array('ma' => 'Maandag','di' => 'Dinsdag','wo' => 'Woensdag','do' => 'Donderdag','vr' => 'Vrijdag','za' => 'Zaterdag','zo' => 'Zondag');
                                 foreach($days as $key => $value){
                                     echo '<div class="col s6"><p>';
-                                        echo '<input type="checkbox" name="dagen[]"  value="'.$key.'" id="day_'.$key.'" />';
-                                        echo '<label for="day_'.$key.'">'.$value.'</label><br /><br />';
+                                    echo '<input type="checkbox" name="dagen[]"  value="'.$key.'" id="day_'.$key.'" />';
+                                    echo '<label for="day_'.$key.'">'.$value.'</label><br /><br />';
                                     echo '</p></div>';
                                 }
-                            ?>
+                                ?>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="prefix material-icons">comment</i>
+                                <textarea id="textarea1" name="opmerking" maxlength="300" data-length="300" class="materialize-textarea" ><?php if(isset($_POST["opmerking"])){echo $_POST["opmerking"];} ?></textarea>
+                                <label for="icon_telephone">Opmerkingen/ervaring</label>
+                            </div>
+
                         </div>
-                        <div class="input-field col s12">
-                            <i class="prefix material-icons">comment</i>
-                            <textarea id="textarea1" name="opmerking" maxlength="300" data-length="300" class="materialize-textarea" ><?php if(isset($_POST["opmerking"])){echo $_POST["opmerking"];} ?></textarea>
-                            <label for="icon_telephone">Opmerkingen/ervaring</label>
-                        </div>
 
+
+
+                        <button type="submit" class="waves-effect waves-light btn right green darken-1" >AANMELDEN</button>
                     </div>
-
-                    <div class="row">
-
-                    </div>
-                </div>
-                <div class="card-action">
-                    <button type="submit" class="waves-effect waves-light btn right green darken-1" >AANMELDEN</button>
-                    <a href="/pages/home" class="waves-effect waves-teal btn grey lighten-1">ANNULEREN</a>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
+
 
     </div>
 

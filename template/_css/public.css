@@ -34,6 +34,21 @@ body{
     margin: 0px auto;
 }
 
+@media screen and (max-width: 1250px){
+    .container{
+        width: 1000px;
+        margin: 0px auto;
+    }
+
+}
+
+
+@media screen and (max-width: 1050px){
+    .container{
+        width: 92%;
+        margin: 0px 4%;
+    }
+}
 
 /* ===| NAVIGATION
 =============================================================== */
@@ -145,7 +160,7 @@ nav ul li a:hover {
     background-size: cover;
 }
 #res_wp .mask{
-    padding: 7% 0px;
+    padding: 150px 0px 0px 0px;
     overflow-y: auto;
     width: 100%;
     height: 100%;
@@ -155,6 +170,7 @@ nav ul li a:hover {
     box-sizing: border-box;
     min-height: 750px;
     margin-top: -20px;
+    padding-bottom: 40px;
 }
 
 
@@ -166,6 +182,7 @@ nav ul li a:hover {
     heigth: 100%;
     background-color: black;
 }
+
 
 
 
