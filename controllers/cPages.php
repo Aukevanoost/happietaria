@@ -32,11 +32,11 @@ class cPages extends Controller
 
     public function onsdoel(){
         $_GET["page_title"] = "onsdoel";
-        $_GET["template"] = "onsdoel";
+        $_GET["template"] = "public";
 
         $this->data = array();
-        //$this->Data["message"] = "Er is nog geen bericht";
-        $_GET["page_header"] = false;
+        $_GET["page_header"] = true;
+        $_GET["page_footer"] = true;
     }
 
 
