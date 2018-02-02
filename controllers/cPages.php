@@ -30,19 +30,22 @@ class cPages extends Controller
 
 
 
-    public function project(){
-        $_GET["page_title"] = "project";
-        $_GET["template"] = "project";
-        $this->Data["message"] = "Er is nog geen bericht";
+    public function onsdoel(){
+        $_GET["page_title"] = "onsdoel";
+        $_GET["template"] = "onsdoel";
+
+        $this->data = array();
+        //$this->Data["message"] = "Er is nog geen bericht";
         $_GET["page_header"] = false;
     }
 
 
 
-    public function sponsoring(){
-        $_GET["page_title"] = "sponsoring";
-        $_GET["template"] = "public";
+    public function doneren(){
+        $_GET["page_title"] = "doneren";
+        $_GET["template"] = "doneren";
         $this->data = array();
+        $_GET["page_header"] = false;
     }
 
 

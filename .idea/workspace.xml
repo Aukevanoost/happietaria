@@ -5,6 +5,9 @@
     <bookmark url="file://$PROJECT_DIR$/controllers/cPages.php" line="8" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="a12dcfad-2bc8-41e6-a1c2-8d355c079e4d" name="Default" comment="" />
+=======
     <list default="true" id="a12dcfad-2bc8-41e6-a1c2-8d355c079e4d" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/template/images/icons/signin.png" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/template/images/icons/facebook_nav.png" afterPath="" />
@@ -19,6 +22,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/layout.phtml" afterPath="$PROJECT_DIR$/template/layout.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pages/contact.phtml" afterPath="$PROJECT_DIR$/views/pages/contact.phtml" />
     </list>
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,54 +33,148 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="public.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/headers/public.phtml">
+=======
+<<<<<<< HEAD
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="home.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/home.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="5" column="52" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homepage.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/_css/homepage.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2584">
+              <caret line="152" column="2" lean-forward="false" selection-start-line="152" selection-start-column="2" selection-end-line="152" selection-end-column="2" />
+              <folding />
+=======
+    <leaf>
+      <file leaf-file-name="mPages.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/mPages.php">
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
               <caret line="21" column="55" lean-forward="false" selection-start-line="21" selection-start-column="55" selection-end-line="21" selection-end-column="55" />
               <folding>
                 <element signature="n#style#0;n#i#0;n#a#0;n#div#0;n#div#1;n#nav#0;n#!!top" expanded="true" />
               </folding>
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="private.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/footers/private.phtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
               <caret line="13" column="32" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="33" selection-end-column="9" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="doneren.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/doneren.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="100" lean-forward="false" selection-start-line="12" selection-start-column="100" selection-end-line="12" selection-end-column="100" />
+=======
+      <file leaf-file-name="sendmail.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/crew/sendmail.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="637">
+              <caret line="76" column="37" lean-forward="false" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="public.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/footers/public.phtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
               <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="doneren.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/_css/doneren.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="103" column="24" lean-forward="true" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
+              <folding />
+=======
+      <file leaf-file-name="mCrew.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/mCrew.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="569">
+              <caret line="259" column="35" lean-forward="false" selection-start-line="259" selection-start-column="20" selection-end-line="259" selection-end-column="35" />
+              <folding>
+                <element signature="e#28#46#0#PHP" expanded="true" />
+                <marker date="1517439538891" expanded="true" signature="491:661" ph="SELECT v.ver... vereniging" />
+                <marker date="1517439538891" expanded="true" signature="1060:1314" ph="SELECT i.*, inschrijving" />
+                <marker date="1517439538891" expanded="true" signature="1737:1764" ph="SELECT * FRO... vaardigheden" />
+                <marker date="1517439538891" expanded="true" signature="2193:2365" ph="SELECT * FRO... vaardigheden" />
+                <marker date="1517439538891" expanded="true" signature="3911:3998" ph="INSERT INTO gebruiker... " />
+                <marker date="1517439538891" expanded="true" signature="4418:4508" ph="INSERT INTO inschrijving... " />
+                <marker date="1517439538891" expanded="true" signature="4958:5031" ph="INSERT INTO inschrijving_vaardigheden... " />
+                <marker date="1517439538891" expanded="true" signature="5871:5966" ph="SELECT g.*, inschrijving" />
+                <marker date="1517439538891" expanded="true" signature="6783:6853" ph="UPDATE insch... " />
+              </folding>
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="private.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/_css/private.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="212">
               <caret line="105" column="1" lean-forward="true" selection-start-line="105" selection-start-column="1" selection-end-line="105" selection-end-column="1" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="onsdoel.phtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/pages/onsdoel.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+=======
+      <file leaf-file-name="mReservering.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/mReservering.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="457">
+              <caret line="330" column="48" lean-forward="true" selection-start-line="321" selection-start-column="8" selection-end-line="330" selection-end-column="48" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="onsdoel.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/_css/onsdoel.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="91">
+              <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+=======
       <file leaf-file-name="cReservering.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/cReservering.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="391">
               <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
@@ -89,26 +187,63 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
               <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+=======
+            <state relative-caret-position="151">
+              <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="153" selection-end-column="9" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="public.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/template/_css/public.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
               <caret line="89" column="27" lean-forward="false" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="public.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/headers/public.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+=======
+      <file leaf-file-name="bekijken.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/crew/bekijken.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="977">
+              <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/Controller.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="cPages.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/cPages.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="37" column="60" lean-forward="true" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
+=======
+      <file leaf-file-name="private.phtml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/template/headers/private.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="100" lean-forward="false" selection-start-line="7" selection-start-column="100" selection-end-line="7" selection-end-column="100" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
               <folding />
             </state>
           </provider>
@@ -139,14 +274,30 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>header</find>
       <find>gauger</find>
       <find>mission</find>
+<<<<<<< HEAD
+      <find>project</find>
+      <find>this</find>
+      <find>center</find>
+      <find>ul</find>
+      <find>spons</find>
+      <find>information_</find>
+=======
       <find>reservation</find>
       <find>send</find>
       <find>mail</find>
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -157,14 +308,47 @@
       <list>
         <option value="$PROJECT_DIR$/views/crew/nieuw.phtml" />
         <option value="$PROJECT_DIR$/models/mReservering.php" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/template/_js/base.js" />
+=======
         <option value="$PROJECT_DIR$/models/mPages.php" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
         <option value="$PROJECT_DIR$/tools/tSecurity.php" />
         <option value="$PROJECT_DIR$/core/App.php" />
         <option value="$PROJECT_DIR$/views/pages/project.phtml" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/controllers/cCrew.php" />
+        <option value="$PROJECT_DIR$/models/mCrew.php" />
+        <option value="$PROJECT_DIR$/template/headers/private.phtml" />
+        <option value="$PROJECT_DIR$/views/crew/index.phtml" />
+        <option value="$PROJECT_DIR$/template/_css/private.css" />
+        <option value="$PROJECT_DIR$/views/crew/bekijken.phtml" />
+        <option value="$PROJECT_DIR$/views/crew/sendmail.phtml" />
+        <option value="$PROJECT_DIR$/template/_css/project.css" />
+        <option value="$PROJECT_DIR$/template/_css/public.css" />
+        <option value="$PROJECT_DIR$/views/pages/contact.phtml" />
+        <option value="$PROJECT_DIR$/models/mPages.php" />
+=======
         <option value="$PROJECT_DIR$/controllers/cPages.php" />
         <option value="$PROJECT_DIR$/template/_css/project.css" />
         <option value="$PROJECT_DIR$/template/_css/homepage.css" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
         <option value="$PROJECT_DIR$/views/pages/home.phtml" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/controllers/cPages.php" />
+        <option value="$PROJECT_DIR$/template/_css/homepage.css" />
+        <option value="$PROJECT_DIR$/template/headers/public.phtml" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/template/_css/onsdoel.css" />
+        <option value="$PROJECT_DIR$/template/_css/doneren.css" />
+        <option value="$PROJECT_DIR$/views/pages/doneren.phtml" />
+        <option value="$PROJECT_DIR$/views/pages/onsdoel.phtml" />
+=======
+        <option value="$PROJECT_DIR$/template/_css/public.css" />
+        <option value="$PROJECT_DIR$/views/pages/contact.phtml" />
+        <option value="$PROJECT_DIR$/template/layout.phtml" />
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
         <option value="$PROJECT_DIR$/template/footers/private.phtml" />
         <option value="$PROJECT_DIR$/views/pages/dashboard.phtml" />
         <option value="$PROJECT_DIR$/views/reservering/index.phtml" />
@@ -181,6 +365,7 @@
         <option value="$PROJECT_DIR$/views/crew/sendmail.phtml" />
         <option value="$PROJECT_DIR$/views/crew/bekijken.phtml" />
         <option value="$PROJECT_DIR$/template/headers/private.phtml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/template/footers/public.phtml" />
         <option value="$PROJECT_DIR$/views/pages/contact.phtml" />
         <option value="$PROJECT_DIR$/template/layout.phtml" />
@@ -189,6 +374,9 @@
         <option value="$PROJECT_DIR$/controllers/cCrew.php" />
         <option value="$PROJECT_DIR$/template/headers/public.phtml" />
         <option value="$PROJECT_DIR$/template/_css/public.css" />
+=======
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
       </list>
     </option>
   </component>
@@ -199,11 +387,18 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+<<<<<<< HEAD
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -222,6 +417,59 @@
     <panes>
       <pane id="ProjectPane">
         <subPane>
+<<<<<<< HEAD
+          <expand>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="core" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="template" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="template" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="_css" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="template" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="headers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="template" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="images" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+=======
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="htdocs" />
@@ -446,6 +694,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -456,8 +705,13 @@
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js.eslint.eslintPackage" value="" />
+<<<<<<< HEAD
+    <property name="SearchEverywhereHistoryKey" value="public.phtml&#9;FILE&#9;file://C:/xampp/htdocs/template/headers/public.phtml&#10;Autoload&#9;FILE&#9;file://C:/xampp/htdocs/core/Autoloader.php&#10;Autoload_class&#9;null&#9;null&#10;autoload_class&#9;null&#9;null&#10;workspace&#9;FILE&#9;file://C:/xampp/htdocs/.idea/workspace.xml" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+=======
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -468,7 +722,27 @@
       <recent name="C:\xampp\htdocs\template\images" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
@@ -496,15 +770,6 @@
       <PhpTestRunnerSettings />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run" />
       <scripts />
@@ -529,6 +794,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a12dcfad-2bc8-41e6-a1c2-8d355c079e4d" name="Default" comment="" />
@@ -551,16 +819,32 @@
       <workItem from="1516786158295" duration="3167000" />
       <workItem from="1516875660292" duration="3475000" />
       <workItem from="1517258465854" duration="3292000" />
+<<<<<<< HEAD
+      <workItem from="1517301642343" duration="16708000" />
+      <workItem from="1517556925108" duration="2507000" />
+=======
       <workItem from="1517393312745" duration="180000" />
       <workItem from="1517396686096" duration="413000" />
       <workItem from="1517428826936" duration="10480000" />
+<<<<<<< HEAD
       <workItem from="1517487371544" duration="28000" />
       <workItem from="1517556949314" duration="6468000" />
+=======
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="71647000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="73293000" />
+=======
+    <option name="totallyTimeSpent" value="65151000" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -570,11 +854,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1421875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -582,21 +867,49 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/core/Autoloader.php</url>
+          <line>5</line>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/controllers/cCrew.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/cReservering.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#31#51#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
     <entry file="file://$PROJECT_DIR$/views/crew/nieuw.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -692,10 +1005,24 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/template/_js/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1411">
+          <caret line="83" column="3" lean-forward="false" selection-start-line="83" selection-start-column="3" selection-end-line="83" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/reservering/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="true" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+=======
     <entry file="file://$PROJECT_DIR$/controllers/cShift.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
         </state>
       </provider>
     </entry>
@@ -713,13 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/project.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/App.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -728,6 +1048,22 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/controllers/cReservering.php">
+=======
+    <entry file="file://$PROJECT_DIR$/core/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="e#104#124#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
     <entry file="file://$PROJECT_DIR$/views/crew/nieuw.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -743,12 +1079,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template/_css/homepage.css">
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1649">
           <caret line="97" column="19" lean-forward="false" selection-start-line="97" selection-start-column="19" selection-end-line="97" selection-end-column="19" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/models/mCrew.php">
+=======
     <entry file="file://$PROJECT_DIR$/template/_css/project.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="833">
@@ -757,12 +1097,44 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/home.phtml">
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1768">
           <caret line="104" column="14" lean-forward="false" selection-start-line="104" selection-start-column="14" selection-end-line="104" selection-end-column="81" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/views/crew/index.phtml">
+=======
+    <entry file="file://$PROJECT_DIR$/template/headers/public.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="9" lean-forward="true" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/_css/public.css">
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1679">
+          <caret line="179" column="18" lean-forward="false" selection-start-line="179" selection-start-column="18" selection-end-line="179" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/footers/public.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
     <entry file="file://$PROJECT_DIR$/template/footers/homepage.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -771,28 +1143,166 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pages/dashboard.phtml">
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/views/pages/contact.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="72" lean-forward="false" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/cPages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
-          <caret line="87" column="38" lean-forward="false" selection-start-line="87" selection-start-column="38" selection-end-line="87" selection-end-column="38" />
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="21" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/views/crew/bekijken.phtml">
+=======
+    <entry file="file://$PROJECT_DIR$/template/layout.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/footers/private.phtml">
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
+    <entry file="file://$PROJECT_DIR$/views/pages/dashboard.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="72" lean-forward="false" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
+<<<<<<< HEAD
+=======
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/_css/private.css">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="1547">
+          <caret line="91" column="28" lean-forward="true" selection-start-line="70" selection-start-column="20" selection-end-line="91" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/_css/public.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1394">
+          <caret line="82" column="29" lean-forward="false" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+=======
+        <state relative-caret-position="501">
+          <caret line="80" column="21" lean-forward="false" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+          <folding />
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/reservering/nieuw.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="102">
+          <caret line="6" column="73" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1669">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/dashboard.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/mReservering.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7633">
+          <caret line="453" column="41" lean-forward="true" selection-start-line="453" selection-start-column="41" selection-end-line="453" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/headers/private.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="47" />
+=======
+        <state relative-caret-position="1462">
+          <caret line="87" column="38" lean-forward="false" selection-start-line="87" selection-start-column="38" selection-end-line="87" selection-end-column="38" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/views/pages/contact.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/mPages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="51" column="17" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+=======
     <entry file="file://$PROJECT_DIR$/template/_js/base.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
           <caret line="87" column="3" lean-forward="false" selection-start-line="87" selection-start-column="3" selection-end-line="87" selection-end-column="3" />
+<<<<<<< HEAD
+=======
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+          <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/controllers/cShift.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/Autoloader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+          <folding />
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/layout.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="30" column="58" lean-forward="false" selection-start-line="30" selection-start-column="58" selection-end-line="30" selection-end-column="58" />
+          <folding />
+=======
     <entry file="file://$PROJECT_DIR$/views/reservering/beoordelen.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -804,11 +1314,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="71" lean-forward="false" selection-start-line="6" selection-start-column="71" selection-end-line="6" selection-end-column="71" />
+<<<<<<< HEAD
+=======
+          <folding>
+            <marker date="1517438256784" expanded="true" signature="2365:2383" ph="..." />
+          </folding>
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/reservering/calendar.phtml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="2584">
+          <caret line="152" column="2" lean-forward="false" selection-start-line="152" selection-start-column="2" selection-end-line="152" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/cCrew.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="61" column="62" lean-forward="false" selection-start-line="61" selection-start-column="62" selection-end-line="61" selection-end-column="62" />
+=======
         <state relative-caret-position="85">
           <caret line="5" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
         </state>
@@ -832,10 +1361,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5542">
           <caret line="330" column="48" lean-forward="true" selection-start-line="321" selection-start-column="8" selection-end-line="330" selection-end-column="48" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/controllers/cPages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="37" column="60" lean-forward="true" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
+=======
     <entry file="file://$PROJECT_DIR$/models/mCrew.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4335">
@@ -864,13 +1400,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/reservering/sendmail.phtml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+=======
+        <state relative-caret-position="637">
+          <caret line="76" column="105" lean-forward="false" selection-start-line="76" selection-start-column="105" selection-end-line="76" selection-end-column="105" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+          <folding />
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/reservering/bekijken.phtml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-941">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="18" selection-end-column="10" />
         </state>
@@ -881,6 +1425,18 @@
         <state relative-caret-position="1632">
           <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
           <folding />
+=======
+<<<<<<< HEAD
+        <state relative-caret-position="204">
+          <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+=======
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
         </state>
       </provider>
     </entry>
@@ -898,11 +1454,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="848">
           <caret line="76" column="37" lean-forward="false" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/views/pages/home.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="5" column="52" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/template/headers/private.phtml">
+=======
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+=======
+    <entry file="file://$PROJECT_DIR$/views/reservering/bekijken.phtml">
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="14" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
@@ -939,20 +1514,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="289">
           <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+=======
+        <state relative-caret-position="151">
+          <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="153" selection-end-column="9" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/controllers/cCrew.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/template/_css/onsdoel.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="125" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/views/crew/bekijken.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="977">
+          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/template/layout.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -991,9 +1587,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="89" column="27" lean-forward="false" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/template/_css/doneren.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="103" column="24" lean-forward="true" selection-start-line="103" selection-start-column="24" selection-end-line="103" selection-end-column="24" />
+=======
+    <entry file="file://$PROJECT_DIR$/template/headers/private.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="100" lean-forward="false" selection-start-line="7" selection-start-column="100" selection-end-line="7" selection-end-column="100" />
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
+>>>>>>> 26e71d6a3c1b7a3dd64400c17e41fb6f8f3c9858
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/views/pages/doneren.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="100" lean-forward="false" selection-start-line="12" selection-start-column="100" selection-end-line="12" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/onsdoel.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="30" lean-forward="true" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+=======
+>>>>>>> 018b817310d90bf9644295edd8a794bdcbcf709b
   </component>
 </project>

@@ -1,0 +1,149 @@
+/*common*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*header/nav*/
+header {
+    background: url('/template/images/projectImg.png') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+
+}
+
+h2 .material-icons{
+    font-size:32px !important;
+    color: #fff;
+    background: #143460;
+    padding: 4px;
+}
+
+h3 .material-icons{
+    font-size:50px !important;
+    color: #fff;
+    display: block;
+    float: left;
+    padding-right: 7px;
+    margin-top: -2px;
+}
+
+#nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 40px;
+}
+
+#nav li {
+    float: left;
+}
+
+#nav li a {
+    display: block;
+    color: #fff;
+    opacity: 0.8;
+    padding: 30px 10px 15px 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .2s;
+}
+
+#nav li a:hover {
+    opacity: 1;
+    border-bottom: 1px solid #ff9818;
+}
+
+#nav li a:focus {
+    outline: none !important;
+}
+
+#rightSection{
+    position: absolute;
+    bottom: 50px;
+    float: right;
+    right: 100px;
+    text-align: right;
+    padding-top: 150px;
+}
+
+#rightButtons {
+    list-style-type: none;
+}
+
+.homepage_btn{
+    width: 250px !important;
+    margin: 10px;
+    display: block;
+    float: right;
+    background-color: #1976D2 !important;
+    color: #fff;
+}
+.homepage_btn_inverse{
+    width: 250px !important;
+    margin: 10px;
+    display: block;
+    float: right;
+    background-color: #fff !important;
+    color: #1976D2;
+}
+
+#information {
+    height: 100%;
+    width: 65%;
+    margin: 400px 50px;
+    position: absolute;
+}
+
+#information_card {
+    height: 450px;
+}
+
+#information_paragraph {
+    text-align: left;
+    font-size: 18px;
+}
+
+/*CVAleden*/
+
+#cvaleden {
+    padding: 150px 0px;
+    background-color: #eee;
+}
+
+#cvaleden_paragraph {
+    text-align: left;
+    font-size: 18px;
+}
+
+#leden li {
+    text-align: left;
+    font-size: 15px;
+}
+
+/*gauger*/
+
+
+/*footer*/
+footer {
+    background-color: #ff9818;
+    min-height: 350px;
+    color: #fff !important;
+}
+
+.footer_item h3 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 4px;
+
+}
+
+footer div ul {
+    list-style-type: none;
+}
+
+footer div img {
+    float: left;
+    width: 35px;
+    padding-right: 5px;
+}
