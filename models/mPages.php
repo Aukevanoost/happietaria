@@ -14,6 +14,7 @@ use tools\tSecurity;
 
 class mPages
 {
+
     public function __construct()
     {
         $conn = new Database();
