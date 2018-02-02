@@ -2,22 +2,22 @@
 <div class="container">
     <div class="card">
         <div class="card-content">
-            <?php
-
-            ?>
-            <form action="" method="post" class="left">
-                <button type="submit" name="navigate" value="remDay" class="btn-floating light-blue darken-3 left"><i class="material-icons">arrow_back</i></button>
-                <input type="date" name="newDate" value="<?= $_GET["id"] ?>" class="validate left" style="width: 160px; margin: 0px 15px; height: 35px" >
-                <button type="submit" name="navigate" value="setDate" class="btn-floating green left"><i class="material-icons" >event</i></button>
-                <button type="submit" name="navigate" value="addDay" class="btn-floating light-blue darken-3 left" style="margin-left: 10px"><i class="material-icons">arrow_forward</i></button>
-            </form>
-            <a href="/reservering/index" class="btn-floating right  green darken-2"><i class="material-icons">dvr</i></a>
+            <a href="/reservering/index" class="btn-floating right  green darken-2 tooltipped"  data-position="top" data-delay="50" data-tooltip="Terug naar het overzicht"><i class="material-icons">dvr</i></a>
+            <br /><br /><br />
+            <div class="z-depth-3" style="padding: 20px 10px; height: 80px">
+                <form action="" method="post">
+                    <button type="submit" name="navigate" value="remDay" class="btn-floating light-blue darken-3 left tooltipped" data-position="top" data-delay="50" data-tooltip="Een dag terug"><i class="material-icons">arrow_back</i></button>
+                    <input type="date" name="newDate" value="<?= $_GET["id"] ?>" class="validate left" style="width: 160px; margin: 0px 15px; height: 35px" >
+                    <button type="submit" name="navigate" value="setDate" class="btn-floating green left"><i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="Navigeren naar de gekozen dag">event</i></button>
+                    <button type="submit" name="navigate" value="addDay" class="btn-floating light-blue darken-3 left tooltipped" data-position="top" data-delay="50" data-tooltip="Een dag vooruit" style="margin-left: 10px"><i class="material-icons">arrow_forward</i></button>
+                </form>
+            </div>
             <br />
-            <div style="clear: both"></div>
-            <hr />
+            <br />
             <br />
             <br />
             <h4><span class="light-blue darken-3" style="color: #fff; padding: 5px 12px; border-radius: 4px;"><?=  date("l", strtotime($_GET["id"])) ?></span> <?=  date("j F Y", strtotime($_GET["id"])) ?></h4>
+
             <br />
             <table  class="table bordered">
                 <thead>
@@ -51,7 +51,7 @@
                     echo '<tr>';
                 }
                 if($this->obj->data["reservations"] == null){
-                    echo '<tr><td><b style="color: #999">#0</b></td><td colspan="3"><i style="color: #999; font-weight: bold;">No reservations found</i></td></tr>';
+                    echo '<tr><td><b style="color: #999">#0</b></td><td colspan="4"><i style="color: #999; font-weight: bold;">No reservations found</i></td></tr>';
                 }
 
                 ?>

@@ -60,7 +60,7 @@ class cReservering extends Controller
 
 
     public function calendar(){
-        $_GET["page_title"] = "Reserveringen";
+        $_GET["page_title"] = "Kalender";
         $_GET["template"] = "private";
 
         $this->data = array();
@@ -126,7 +126,7 @@ class cReservering extends Controller
 
     public function beoordelen(){
         $_GET["template"] = "private";
-        $_GET["page_title"] = "Reservering bekijken";
+        $_GET["page_title"] = "Reservering beoordelen";
         //$this->data["status"] = $this->model->getStates();
 
         $this->data["reservation"] = $this->model->getFromId($_GET["id"]);
@@ -134,7 +134,7 @@ class cReservering extends Controller
 
     public function sendmail(){
         $_GET["template"] = "private";
-        $_GET["page_title"] = "Een mail";
+        $_GET["page_title"] = "De klant mailen";
         $this->data["reservation"] = $this->model->getFromId($_GET["id"]);
         $this->data["message"] = "";
 

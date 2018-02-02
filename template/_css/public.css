@@ -172,3 +172,11 @@ nav ul li a:hover {
 }
 
 
+/* ===| CONTACT
+=============================================================== */
+#contactDiv{
+    box-sizing: border-box;
+    width: 1000px;
+    min-height: 600px;
+    margin: 0px auto;
+}

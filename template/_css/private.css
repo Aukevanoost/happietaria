@@ -1,8 +1,84 @@
 /* Main style
 ---------------------------------------------- */
 body{
-    background: url('/template/images/manager_wallpaper.png') no-repeat center center !important;
-    background-size: cover !important;
+    /*background-color: #00e5ff !important;*/
+    margin: 0px;
+    padding: 0px;
+    background: #fff !important;
+}
+
+
+/* Navigation
+---------------------------------------------- */
+header{
+    background: #eee;
+    height: 120px;
+    width: 100%;
+}
+
+header nav{
+    background: transparent !important;
+    box-shadow: none;
+}
+
+header a{
+    color: #444 !important;
+}
+
+#pagetitle{
+    background: #5e35b1;
+    height: 160px;
+    width: 100%;
+}
+
+#pagetitle h3{
+    color: #fff;
+    margin: 0px;
+    padding: 0px;
+    line-height: 160px;
+}
+
+.card{
+    background: transparent;
+    box-shadow: none;
+}
+
+.customItem{
+    text-transform: uppercase;
+    margin-top: 10px;
+    height: 40px;
+    display: inline-block;
+}
+
+.customItem a{
+    height: 46px;
+    line-height: 40px;
+}
+
+.customItem.active a{
+    color: #5e35b1 !important;
+    font-weight: bold;
+    background: #eee;
+}
+
+
+
+.customItem a:hover ,.customItem.active a:hover{
+    background: #eee;
+    border-bottom: 4px solid #5e35b1;
+}
+
+#breadcrumb{
+    color: #000;
+    padding: 15px;
+}
+
+#breadcrumb a{
+    color: #000;
+}
+
+#breadcrumb i{
+    padding-top:10px;
 }
 
 /* DASHBOARD
@@ -27,4 +103,41 @@ body{
 
 th {
     vertical-align: top !important;
+}
+
+footer{
+    margin-top: 45px;
+}
+
+#footer1{
+    padding-top: 8px;
+    background: #5e35b1;
+    height: 200px;
+    width: 100%;
+    color: #fff;
+}
+
+#footer1 h4{
+    margin: 0px;
+    padding: 0px;
+    line-height: 48px;
+    color: #fff;
+}
+#footer1 table{
+    color: #fff !important;
+}
+#footer1 table a{
+    color: #fff !important;
+}
+#footer2{
+    background: #512da8   ;
+    height: 40px;
+    width: 100%;
+}
+
+#footer2 p {
+    color: #fff;
+    padding: 0px;
+    margin: 0px;
+    line-height: 40px;
 }

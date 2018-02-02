@@ -2,25 +2,22 @@
 <div class="container">
     <div class="card">
         <div class="card-content">
-            <?php
-            foreach($this->obj->data["states"] as $s){
-                //if($s["status_id"] == $_GET["id"]){  $curState = $s["naam"]; } else { $class = "waves-effect waves-teal btn-flat"; }
-                $class = ($s["status_id"] == $_GET["id"]) ? "waves-effect light-blue darken-3 waves-light btn" :"waves-effect waves-teal btn-flat"  ;
-                $items = ($s["items"] >= 1 && $s["status_id"] != 4) ? '<div class="blue lighten-1" style="color: #fff; padding: 2px 8px; line-height: 15px; margin-left: 8px; margin-top: 8px; border-radius: 20px; font-size: 10px; float: left ">'.$s["items"].'</div>' : "" ;
-                echo '<a href="/reservering/index/'.$s["status_id"].'" class="'.$class.'"><p style="float: left;">'.$s["naam"].'</p> '.$items.'</a>';
-
-
-
-            }
-
-
-            ?>
             <a href="/reservering/calendar/<?= date('Y-m-d') ?>" class="btn-floating right  green darken-2" style="margin-left: 8px;"><i class="material-icons">date_range</i></a>
             <a href="/reservering/statussen" class="btn-floating right  red darken-3" ><i class="material-icons">build</i></a>
-            <br />
-            <br />
-            <br />
-            <hr />
+            <br /><br /><br />
+            <div class="z-depth-3" style="padding: 20px 10px;">
+                <?php
+                    foreach($this->obj->data["states"] as $s){
+                        //if($s["status_id"] == $_GET["id"]){  $curState = $s["naam"]; } else { $class = "waves-effect waves-teal btn-flat"; }
+                        $class = ($s["status_id"] == $_GET["id"]) ? "waves-effect green darken-2 waves-light btn" :"waves-effect waves-teal btn-flat"  ;
+                        $chipColor = ($s["status_id"] == $_GET["id"]) ? "background: #fff; color: #222" : "background: #424242 ; color: #fff";
+                        $items = ($s["items"] >= 1 && $s["status_id"] != 4) ? '<div style="'.$chipColor.'; padding: 2px 8px; line-height: 15px; margin-left: 8px; margin-top: 8px; border-radius: 20px; font-size: 10px; float: left ">'.$s["items"].'</div>' : "" ;
+                        echo '<a href="/reservering/index/'.$s["status_id"].'" class="'.$class.'"><p style="float: left;">'.$s["naam"].'</p> '.$items.'</a>';
+                    }
+                ?>
+            </div>
+
+
             <br />
             <br />
             <h4>Reserveringen</h4>
@@ -41,8 +38,8 @@
                             $chgAcc = "";
                             switch($r["geaccepteerd"]){
                                 case 0: $r["geaccepteerd"] = "Nog niet behandeld";break;
-                                case 1: $r["geaccepteerd"] = "<b style='color: #0c0'>Ja</b>";   $chgAcc = '| <a href="/reservering/accept/' . $r["reservering_id"] . '">Weigeren</a> ';break;
-                                case 2: $r["geaccepteerd"] = "<b style='color: #c00'>Nee</b>";  $chgAcc = '| <a href="/reservering/accept/' . $r["reservering_id"] . '">Accepteren</a> ';break;
+                                case 1: $r["geaccepteerd"] = "<b style='color: #0c0'>Ja</b>";   $chgAcc = '| <a href="/reservering/accept/' . $r["reservering_id"] . '">WEIGEREN</a> ';break;
+                                case 2: $r["geaccepteerd"] = "<b style='color: #c00'>Nee</b>";  $chgAcc = '| <a href="/reservering/accept/' . $r["reservering_id"] . '">ACCEPTEREN</a> ';break;
                             }
 
 
@@ -58,11 +55,11 @@
                                     if($geaccepteerd) {
                                        // echo '<a href="reservering/bekijken/' . $r["reservering_id"] . '">Bekijken</a> | ';
                                         //echo '<a href="/reservering/index">Beantwoorden</a>';
-                                        echo '<a href="/reservering/bekijken/' . $r["reservering_id"] . '">Details</a> ';
+                                        echo '<a href="/reservering/bekijken/' . $r["reservering_id"] . '">BEKIJKEN</a> ';
                                         echo $chgAcc;
-                                        if($_GET["id"] != 4){echo '| <a href="/reservering/archive/' . $r["reservering_id"] . '">Archiveren</a>';}
+                                        if($_GET["id"] != 4){echo '| <a href="/reservering/archive/' . $r["reservering_id"] . '">ARCHIVEREN</a>';}
                                     }else{
-                                        echo '<a class="btn green darken-1" href="/reservering/beoordelen/' . $r["reservering_id"] . '">beoordelen</a>';
+                                        echo '<a class="btn green darken-1" href="/reservering/beoordelen/' . $r["reservering_id"] . '">BEOORDELEN</a>';
                                     }
                                 echo '</td>';
                             echo '<tr>';

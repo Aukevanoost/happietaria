@@ -2,9 +2,10 @@
 <div class="container">
     <div class="card">
         <div class="card-content">
-
-            <?= $this->obj->data["message"]; ?>
+            <a href="/reservering/index" class="btn-floating right  green darken-2 tooltipped"  data-position="top" data-delay="50" data-tooltip="Terug naar het overzicht"><i class="material-icons">dvr</i></a>
             <h4>Statusbeheer</h4>
+            <b><i>Een kleine tool om je reserveringen te kunnen ordenen</i></b>
+            <?= $this->obj->data["message"]; ?>
             <br />
 
             <table  class="table bordered">
@@ -16,11 +17,11 @@
                 <tbody>
                     <tr style="background: #eee">
                         <form action="" method="post">
-                            <td><i class="material-icons">add</i></td>
+                            <td><i class="material-icons">add_circle</i></td>
                             <td>
                                 <input type="text" class="validate" required style="margin: 0px; padding: 0px; line-height: 20px; margin-top: -12;" name="status">
                             </td>
-                            <td  style="text-align: right;"><button type="submit" name="addStatus" class="waves-effect waves-light btn green darken-1" style="margin-top: 0px;">New status</button></td>
+                            <td  style="text-align: right;"><button type="submit" name="addStatus" class="waves-effect waves-light btn green darken-1" style="margin-top: 0px;">STATUS TOEVOEGEN</button></td>
                         </form>
                     </tr>
                     <?php

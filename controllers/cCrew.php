@@ -9,7 +9,7 @@ class cCrew extends Controller
 {
     public $data;
     private $model;
-    protected $protected_pages = array('index','action');
+    protected $protected_pages = array('index','action','bekijken','sendmail');
 
 
     public function __construct()
@@ -55,11 +55,30 @@ class cCrew extends Controller
     }
 
     public function bekijken(){
-        $_GET["page_title"] = "Vrijwilliger details";
+        $_GET["page_title"] = "Vrijwilliger bekijken";
         $_GET["template"] = "private";
 
         $this->data["inschrijving"] = $this->model->getFromId($_GET["id"]);
         $this->data["skills"] = $this->model->getChosenSkills($_GET["id"]);
+    }
+
+
+    public function sendmail(){
+        $_GET["page_title"] = "Vrijwilliger mailen";
+        $_GET["template"] = "private";
+
+        $this->data["inschrijving"] = $this->model->getFromId($_GET["id"]);
+        $this->data["skills"] = $this->model->getChosenSkills($_GET["id"]);
+        $this->data["message"] = "";
+
+
+        if(isset($_POST["confirmation"]) && $_POST["confirmation"] == "mailOk"){
+            $this->data["message"] = $this->model->sendCreatedMail($this->data["inschrijving"]);
+            $this->data["mail"] = array("subject" => $_POST["onderwerp"], "message" => $_POST["inhoud"]);
+        }else {
+            //$this->data["message"] = "<div class=\"chip\">Whats this? a bug?.<i class=\"close material-icons\">close</i></div>";
+            $this->data["mail"] = $this->model->getMailData($this->data["inschrijving"]);
+        }
     }
 
 
