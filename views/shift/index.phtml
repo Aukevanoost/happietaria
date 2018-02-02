@@ -1,0 +1,42 @@
+<br />
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+            <h4>Shifts</h4>
+
+            <table  class="table">
+                <thead>
+                    <th>#</th>
+                    <th>Naam</th>
+                    <th>Begintijd</th>
+                    <th>Eindtijd</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                <?php
+                foreach($this->obj->data["shifts"] as $r){
+
+                    echo '<tr>';
+                    echo '<td>#'.$r["shift_id"].'</td>';
+                    echo '<td>'.$r["opmerking"].'</td>';
+                    echo '<td>'.$r["begin_tijd"].'</td>';
+                    echo '<td>'.$r["eind_tijd"].'</td>';
+
+                    echo '<td style="text-align: right; min-width: 80px !Important">';
+                    echo '<a href="/shift/wijzigen/'.$r["shift_id"].'" class="right">WIJZIGEN</a>';
+                    echo '</td>';
+                    echo '<tr>';
+                }
+                if($this->obj->data["shifts"] == null){
+                    echo '<tr><td><b style="color: #999">#0</b></td><td colspan="3"><i style="color: #999; font-weight: bold;">No records found</i></td></tr>';
+                }
+
+                ?>
+
+                </tbody>
+            </table>
+            <br /><br />
+            <br /><br />
+        </div>
+    </div>
+</div>
